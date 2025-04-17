@@ -12,6 +12,14 @@
   --clr-pill-bg: #000000;
   --clr-pill-text: var(--clr-heading); /* Reuse heading color */
   --clr-button-text: var(--clr-heading); /* Reuse heading color */
+  --clr-bg-subtle: #27272a; /* Subtle background gray */
+
+  /* Light Theme Specific */
+  --clr-bg-light: #ffffff;
+  --clr-text-dark: #1f2937; /* Dark Gray for text */
+  --clr-heading-dark: #111827; /* Very Dark Gray/Black for headings */
+  --clr-meta-dark: #6b7280; /* Medium Gray for meta */
+  --clr-accent-darker: #057a00; /* Darker Green for hover on light bg */
 }
 
 @font-face {
@@ -414,6 +422,66 @@ a:hover {
   line-height: 1.7;
 }
 
+/* Release Notes Page Styles */
+.release-notes-page {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2.5rem 3rem;
+  min-height: calc(100vh - 270px); /* Adjust for navbar, extend close to bottom */
+  background-color: var(--clr-bg-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.release-notes-page h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--clr-heading-dark); /* Dark heading color */
+}
+
+.release-notes-list {
+  list-style: none;
+  padding: 0;
+}
+
+.release-notes-list li {
+  margin-bottom: 2rem; /* Slightly reduce margin */
+  padding-bottom: 2rem;
+  /* border-bottom: 1px solid var(--clr-border); Removed border */
+}
+
+.release-notes-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0; /* No padding on last item */
+}
+
+.release-notes-list h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.release-notes-list h2 a {
+  text-decoration: none;
+  color: var(--clr-heading-dark); /* Dark heading color */
+}
+
+.release-notes-list h2 a:hover {
+  color: var(--clr-accent-darker); /* Use darker accent for hover */
+}
+
+.post-meta {
+  color: var(--clr-meta-dark); /* Medium dark gray meta */
+  font-size: 0.9em;
+  margin-bottom: 0.8rem;
+}
+
+.post-excerpt p {
+  margin: 0;
+  color: var(--clr-text-dark); /* Dark text color */
+  line-height: 1.6;
+}
+
 /* --- Responsive Styles --- */
 
 @media (max-width: 768px) {
@@ -511,5 +579,17 @@ a:hover {
   }
   .feature-item-centered .feature-content {
     max-width: 90%; /* Allow more width */
+  }
+
+  /* Adjustments for release notes page on mobile */
+  .release-notes-page {
+    padding: 2rem 1.5rem;
+    margin: 2rem auto;
+  }
+  .release-notes-page h1 {
+    font-size: 1.8em;
+  }
+  .release-notes-list h2 {
+    font-size: 1.4em;
   }
 } 
