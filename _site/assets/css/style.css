@@ -435,9 +435,9 @@ a:hover {
 }
 
 .release-notes-page h1 {
-  text-align: center;
+  text-align: left; /* Align title left */
   margin-bottom: 2rem;
-  color: var(--clr-heading-dark); /* Dark heading color */
+  color: var(--clr-heading-dark);
 }
 
 .release-notes-list {
@@ -571,15 +571,61 @@ a:hover {
   color: var(--clr-text-dark); /* Set base dark text color */
 }
 
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem; /* Space below header */
+  gap: 1rem;
+}
+
+.post-header-downloads {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0; /* Prevent buttons from shrinking too much */
+}
+
+.post-header-downloads .btn-download {
+  padding: 0.4rem 0.6rem; /* Slightly smaller padding */
+  font-size: 0.8em;
+  gap: 0.4em;
+}
+
+.post-header-downloads .btn-download i {
+  font-size: 1.1em;
+  width: auto; /* Auto width for icon */
+}
+
+.btn-label-inline {
+  /* Styles for inline label if needed */
+}
+
 .post-layout h1 {
   margin-top: 0;
-  margin-bottom: 0.5rem; /* Less margin below title */
+  margin-bottom: 0; /* Removed margin */
   color: var(--clr-heading-dark);
+  font-size: 2em; /* Adjust size */
+  line-height: 1.2;
+}
+
+.post-subheading {
+  margin-bottom: 2rem;
+  color: var(--clr-meta-dark);
+  font-size: 0.9em;
+  padding-bottom: 1rem; /* Add padding below */
+  border-bottom: 1px solid #e5e7eb; /* Subtle bottom border */
+}
+
+.post-subheading .post-version {
+  font-weight: 600; /* Slightly bolder version */
+}
+
+.post-subheading .separator {
+  margin: 0 0.5em;
 }
 
 .post-layout .post-meta {
-  margin-bottom: 2rem; /* More margin below meta */
-  color: var(--clr-meta-dark);
+  /* Removed styles as it's now part of subheading */
 }
 
 .post-layout .post-content {
@@ -610,6 +656,13 @@ a:hover {
 
 /* Adjustments for post layout on mobile */
 @media (max-width: 768px) {
+  .post-header {
+    flex-direction: column;
+    align-items: flex-start; /* Align title left */
+  }
+  .post-header-downloads {
+    margin-top: 0.8rem;
+  }
   .post-layout {
     padding: 2rem 1.5rem;
     margin: 2rem auto;
@@ -617,6 +670,9 @@ a:hover {
   }
   .post-layout h1 {
     font-size: 1.8em;
+  }
+  .post-subheading {
+    font-size: 0.85em;
   }
 }
 
@@ -824,4 +880,56 @@ a:hover {
   .btn-download {
     justify-content: center; /* Center content on mobile buttons */
   }
+}
+
+.download-label {
+  font-size: 0.8em;
+  color: var(--clr-meta-dark);
+  margin: 0 0.5em 0 0; /* Default right margin */
+  display: inline-block; /* Align with buttons */
+  line-height: 1.5; /* Align with button text */
+}
+
+.post-header-downloads {
+  display: flex;
+  align-items: center; /* Vertically align label and buttons */
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Adjust list view download column */
+.release-notes-list .post-download-column {
+  flex: 0 0 140px;
+  align-items: stretch;
+  gap: 0.3rem; /* Slightly reduce gap */
+  padding-top: 1rem; /* Adjust padding to align label nicely */
+}
+
+.release-notes-list .post-download-column .download-label {
+  text-align: center; /* Center label above buttons */
+  margin-bottom: 0.4rem; /* Space below label */
+  width: 100%; /* Take full width */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .post-header-downloads {
+    margin-top: 0.8rem;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+  }
+  .download-label {
+    /* Ensure label looks okay on mobile */
+     margin-bottom: 0.3em; 
+  }
+  .release-notes-list .post-download-column {
+     /* Buttons are row on mobile, adjust label */
+     flex-direction: row;
+     align-items: center;
+     flex-wrap: wrap; 
+  }
+   .release-notes-list .post-download-column .download-label {
+     width: auto; /* Reset width */
+     text-align: left;
+     margin-bottom: 0; /* Remove bottom margin */
+   }
 } 
