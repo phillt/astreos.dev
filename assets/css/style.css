@@ -482,6 +482,117 @@ a:hover {
   line-height: 1.6;
 }
 
+/* Single Post Layout Styles */
+.post-layout {
+  max-width: 800px; /* Match list page width */
+  margin: 1rem auto; /* Match list page margin */
+  padding: 2.5rem 3rem; /* Match list page padding */
+  min-height: calc(100vh - 270px); /* Match list page height */
+  background-color: var(--clr-bg-light); /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Match shadow */
+  color: var(--clr-text-dark); /* Set base dark text color */
+}
+
+.post-layout h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem; /* Less margin below title */
+  color: var(--clr-heading-dark);
+}
+
+.post-layout .post-meta {
+  margin-bottom: 2rem; /* More margin below meta */
+  color: var(--clr-meta-dark);
+}
+
+.post-layout .post-content {
+  line-height: 1.7;
+}
+
+.post-layout .post-content h2,
+.post-layout .post-content h3,
+.post-layout .post-content h4 {
+  color: var(--clr-heading-dark);
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+.post-layout .post-content p,
+.post-layout .post-content li {
+  margin-bottom: 1em;
+}
+
+.post-layout .post-content a {
+  color: var(--clr-accent);
+  text-decoration: underline;
+}
+
+.post-layout .post-content a:hover {
+  color: var(--clr-accent-darker);
+}
+
+/* Adjustments for post layout on mobile */
+@media (max-width: 768px) {
+  .post-layout {
+    padding: 2rem 1.5rem;
+    margin: 2rem auto;
+    min-height: auto; /* Allow natural height */
+  }
+  .post-layout h1 {
+    font-size: 1.8em;
+  }
+}
+
+/* Breadcrumbs Styles */
+.breadcrumbs-container {
+  max-width: 800px; /* Match post content width */
+  margin: 2rem auto 0 auto; /* Margin above, centered */
+  padding: 0 1rem; /* Match post padding horizontally */
+}
+
+.breadcrumbs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.breadcrumbs li {
+  display: inline;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: " / "; /* Separator */
+  margin: 0 0.5em;
+  color: var(--clr-meta-dark); /* Use meta color for separator */
+}
+
+.breadcrumbs a {
+  color: var(--clr-accent); /* Use accent color for links */
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+  color: var(--clr-accent-darker);
+}
+
+.breadcrumbs li.current {
+  color: var(--clr-bg-light); /* Dark text for current page */
+  font-weight: bold;
+}
+
+/* Adjustments for breadcrumbs on mobile */
+@media (max-width: 768px) {
+  .breadcrumbs-container {
+    margin-top: 1rem;
+    padding: 0 1.5rem;
+  }
+  .breadcrumbs {
+    font-size: 0.8em;
+  }
+}
+
 /* --- Responsive Styles --- */
 
 @media (max-width: 768px) {

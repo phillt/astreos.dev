@@ -2,6 +2,25 @@
 layout: default
 ---
 
+<nav aria-label="breadcrumb" class="breadcrumbs-container">
+  <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="{{ '/' | relative_url }}">
+        <span itemprop="name">Home</span></a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="{{ '/releases/' | relative_url }}">
+        <span itemprop="name">Releases</span></a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">{{ page.title | escape }}</span>
+      <meta itemprop="position" content="3" />
+    </li>
+  </ol>
+</nav>
+
 <article class="post-layout">
   <h1>{{ page.title | escape }}</h1>
   <p class="post-meta">{{ page.date | date_to_string }}</p>

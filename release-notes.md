@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Release Notes
-permalink: /release-notes/
+title: Releases
+permalink: /releases/
 ---
 
 <div class="release-notes-page">
