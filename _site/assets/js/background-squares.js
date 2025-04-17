@@ -88,4 +88,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Attach throttled listener
     window.addEventListener('mousemove', throttle(handleMouseMove, 50)); // Update every 50ms
+
+    // --- Background Fade Logic --- //
+    const hero = document.querySelector('.hero');
+    const backgroundContainer = document.querySelector('.background-squares');
+
+    // Define start and end colors (RGB)
+    const startColor = { r: 17, g: 24, b: 39 }; // #111827
+    const endColor = { r: 0, g: 0, b: 0 }; // #000000
+
+    let ticking = false;
+    // Ensure hero is HTMLElement before getting offsetHeight
+    let heroHeight = (hero instanceof HTMLElement) ? hero.offsetHeight : 0;
+
+    function updateBackgroundColor() {
+        if (!(hero instanceof HTMLElement) || !(backgroundContainer instanceof HTMLElement)) return;
+
+        const scrollY = window.scrollY;
+        // Calculate progress (0 to 1) within the hero section
+        const currentHeroHeight = hero.offsetHeight; // Get current height in case it changes
+        const progress = Math.min(1, Math.max(0, scrollY / (currentHeroHeight - 50)));
+
+        // Interpolate RGB values
+        const r = Math.round(startColor.r + (endColor.r - startColor.r) * progress);
+        const g = Math.round(startColor.g + (endColor.g - startColor.g) * progress);
+        const b = Math.round(startColor.b + (endColor.b - startColor.b) * progress);
+
+        // Apply the style
+        backgroundContainer.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+
+        ticking = false;
+    }
+
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateBackgroundColor);
+            ticking = true;
+        }
+    }
+
+    function onResize() {
+        // Recalculate height on resize
+        heroHeight = (hero instanceof HTMLElement) ? hero.offsetHeight : 0;
+        onScroll();
+    }
+
+    // Initial calculation
+    onScroll();
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
 }); 

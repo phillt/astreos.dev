@@ -178,6 +178,13 @@ a:hover {
   background-color: var(--clr-accent-dark);
 }
 
+.btn-register:disabled {
+  background-color: #555; /* Darker gray background */
+  color: #aaa; /* Lighter gray text */
+  cursor: not-allowed; /* Indicate it's not clickable */
+  opacity: 0.7; /* Slightly faded */
+}
+
 /* Section Styles */
 .content-section { /* Used for Features */
   padding: 4rem 2rem; /* Restored bottom padding */
@@ -301,9 +308,12 @@ a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Behind other content */
+  z-index: -1;
   overflow: hidden;
-  pointer-events: none; /* Don't interfere with clicks */
+  pointer-events: none;
+  background-color: var(--clr-bg); /* Set initial background */
+  /* Transitioning background-color set via JS can be tricky */
+  /* transition: background-color 0.3s ease; */
 }
 
 /* Remove cluster wrapper styles */
