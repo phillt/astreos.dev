@@ -45,10 +45,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 70px); /* Adjust 70px based on actual navbar height */
+  min-height: calc(100vh - 70px); /* Keep adjusted height for navbar */
   text-align: center;
-  padding: 2rem;
+  padding: 2rem; /* Keep padding */
   box-sizing: border-box;
+  border-bottom: 1px solid var(--clr-border); /* Add separator */
 }
 
 .hero h1 {
@@ -184,42 +185,120 @@ a:hover {
 }
 
 /* Section Styles */
-.section-container {
+.content-section { /* Used for Features */
+  padding: 4rem 0;
+  border-bottom: 1px solid var(--clr-border);
+  min-height: 100vh; /* Set min-height to viewport height */
+  display: flex; /* Enable flexbox for vertical centering */
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  box-sizing: border-box; /* Include padding in height calculation */
+}
+
+.content-section:last-of-type {
+  border-bottom: none;
+}
+
+.content-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 0; /* Remove potential top margin */
+}
+
+.feature-item {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem; /* Increased gap */
+  margin-bottom: 4rem; /* Space between feature items */
+}
+
+.feature-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Default is image-left */
+
+.feature-item.image-right {
+  flex-direction: row-reverse;
+}
+
+.feature-image {
+  flex: 1;
+  text-align: center;
+}
+
+.feature-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.feature-content {
+  flex: 1; /* Equal width */
+  text-align: left;
+}
+
+.feature-content h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: var(--clr-heading);
+  font-size: 1.4em;
+}
+
+.feature-content p {
+  color: var(--clr-text);
+  line-height: 1.7;
+}
+
+/* Keep .section-container for About/Contact if needed, but update */
+.section-container { /* Used for About/Contact */
+  display: flex;
+  /* align-items: center; Now handled by inner content? Maybe keep for single row */
+  gap: 3rem;
   padding: 4rem 0;
-  margin-bottom: 2rem;
+  margin-bottom: 0; /* Remove margin between full-height sections */
   border-bottom: 1px solid var(--clr-border);
-  min-height: 60vh;
+  min-height: 100vh; /* Set min-height to viewport height */
+  box-sizing: border-box; /* Include padding */
+  /* If content should center vertically within section-container: */
+  flex-direction: column; 
+  justify-content: center;
 }
 
 .section-container:last-child {
-  border-bottom: none; /* Remove border from last section */
+  border-bottom: none;
 }
 
-.section-image {
-  flex: 1; /* Adjust flex ratio as needed */
+.section-container .section-inner-wrapper {
+  /* Optional wrapper if needed to contain the flex row (image+text) */
+  display: flex;
+  align-items: center;
+  gap: inherit; /* Inherit gap from parent */
+  width: 100%; /* Take full width */
+}
+
+.section-image { /* Used by About/Contact */
+  flex: 1;
   text-align: center;
 }
 
 .section-image img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px; /* Optional: rounded corners for images */
+  border-radius: 8px;
 }
 
-.section-content {
-  flex: 2; /* Adjust flex ratio as needed */
+.section-content { /* Used by About/Contact */
+  flex: 1; /* Equal width */
   text-align: left;
 }
 
-.section-content h2 {
+.section-content h2 { /* Used by About/Contact */
   margin-top: 0;
   color: var(--clr-heading);
 }
 
-.section-content p {
+.section-content p { /* Used by About/Contact */
   color: var(--clr-text);
 }
 

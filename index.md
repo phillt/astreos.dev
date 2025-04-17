@@ -12,14 +12,59 @@ title: "Astreos (beta) - Take Control of Your Budgeting"
 <div class="main-content-container">
   ---
 
-  <section id="features" class="section-container">
-    <div class="section-image">
-      <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Feature Image">
+  <section id="features" class="content-section">
+    <h2>What You Can Do with Astreos</h2>
+
+    <div class="feature-item image-left">
+      <div class="feature-image">
+        <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Pay Periods Feature">
+      </div>
+      <div class="feature-content">
+        <h3>See your money in pay periods</h3>
+        <p>Astreos organizes your budget around your paychecks, so you always know what's covered and what's coming up.</p>
+      </div>
     </div>
-    <div class="section-content">
-      <h2>Features</h2>
-      <p>Discover the amazing features that make our app unique. [Add more details here].</p>
+
+    <div class="feature-item image-right">
+      <div class="feature-image">
+        <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Tracking Feature">
+      </div>
+      <div class="feature-content">
+        <h3>Track bills and spending</h3>
+        <p>Add your bills and daily expenses in seconds. Astreos shows you exactly where your money is going.</p>
+      </div>
     </div>
+
+    <div class="feature-item image-left">
+      <div class="feature-image">
+        <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Rollover Feature">
+      </div>
+      <div class="feature-content">
+        <h3>Roll over leftover money</h3>
+        <p>Got cash left at the end of a pay period? You can carry it forward to help with the next one.</p>
+      </div>
+    </div>
+
+    <div class="feature-item image-right">
+      <div class="feature-image">
+        <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Due Dates Feature">
+      </div>
+      <div class="feature-content">
+        <h3>Stay on top of due dates</h3>
+        <p>Never forget a bill again. Astreos groups bills by payday, so you're always prepared.</p>
+      </div>
+    </div>
+
+    <div class="feature-item image-left">
+      <div class="feature-image">
+        <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Control Feature">
+      </div>
+      <div class="feature-content">
+        <h3>Budget without giving up control</h3>
+        <p>No subscriptions, no account required, no syncing to your bank. Your data stays with you.</p>
+      </div>
+    </div>
+
   </section>
 
   ---
@@ -29,8 +74,8 @@ title: "Astreos (beta) - Take Control of Your Budgeting"
       <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="About Image">
     </div>
     <div class="section-content">
-      <h2>About Us</h2>
-      <p>Learn more about the team and mission behind [App Name]. [Add more details here].</p>
+      <h2>Finally, a Budget That Makes Sense</h2>
+      <p>Astreos is made for real people — even if you've never budgeted before. Just tell it when you get paid, what bills you have, and what money you spend. Astreos breaks everything into easy pay periods, shows you what's coming up, and helps you stay ahead — without judgment or spreadsheets. And it works right on your computer, with no accounts or data tracking.</p>
     </div>
   </section>
 
