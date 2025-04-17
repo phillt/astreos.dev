@@ -16,6 +16,7 @@
 
   /* Light Theme Specific */
   --clr-bg-light: #ffffff;
+  --clr-bg-paper: #fbfbf8; /* Subtle off-white paper color */
   --clr-text-dark: #1f2937; /* Dark Gray for text */
   --clr-heading-dark: #111827; /* Very Dark Gray/Black for headings */
   --clr-meta-dark: #6b7280; /* Medium Gray for meta */
@@ -426,9 +427,9 @@ a:hover {
 .release-notes-page {
   max-width: 800px;
   margin: 4rem auto;
-  padding: 2.5rem 3rem;
+  padding: 2rem 2rem; /* Adjust padding */
   min-height: calc(100vh - 270px); /* Adjust for navbar, extend close to bottom */
-  background-color: var(--clr-bg-light);
+  background-color: var(--clr-bg-paper); /* Use paper background */
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -441,24 +442,59 @@ a:hover {
 
 .release-notes-list {
   list-style: none;
-  padding: 0;
+  margin-top: 0;
+  border-bottom: 1px solid var(--clr-text-subtle);
+  border-top: 1px solid var(--clr-text-subtle);
+   /* Subtle top border for the list */
+}
+
+.release-notes-list li:first-of-type {
+  border-top: none;
 }
 
 .release-notes-list li {
-  margin-bottom: 2rem; /* Slightly reduce margin */
-  padding-bottom: 2rem;
-  /* border-bottom: 1px solid var(--clr-border); Removed border */
+  display: flex;
+  align-items: stretch; /* Make columns equal height */
+  gap: 1.5rem;
+  margin-bottom: 0;
+  border-top: 1px solid #e5e7eb;
 }
 
-.release-notes-list li:last-child {
-  border-bottom: none;
+.release-notes-list .post-meta-column,
+.release-notes-list .post-details {
+  padding: 1rem;
+}
+
+.release-notes-list .post-meta-column {
+  flex: 0 0 120px; /* Fixed width for this column */
+  text-align: right; /* Align text right */
+  border-right: 1px dashed var(--clr-text-subtle);
+
+}
+
+.release-notes-list .post-version {
+  font-weight: normal;
+  color: var(--clr-heading-dark); /* Match heading color */
+  margin: 0 0 0.25rem 0; /* Margin below version */
+  font-size: 0.95em;
+}
+
+.release-notes-list .post-meta {
+  color: var(--clr-meta-dark);
+  font-size: 0.85em;
   margin-bottom: 0;
-  padding-bottom: 0; /* No padding on last item */
+  /* text-align: right; Handled by parent */
+}
+
+.release-notes-list .post-details {
+  flex: 1;
 }
 
 .release-notes-list h2 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* Space below title */
+  font-size: 1.3em; /* Adjust size */
+  line-height: 1.3;
 }
 
 .release-notes-list h2 a {
@@ -470,16 +506,11 @@ a:hover {
   color: var(--clr-accent-darker); /* Use darker accent for hover */
 }
 
-.post-meta {
-  color: var(--clr-meta-dark); /* Medium dark gray meta */
-  font-size: 0.9em;
-  margin-bottom: 0.8rem;
-}
-
 .post-excerpt p {
   margin: 0;
-  color: var(--clr-text-dark); /* Dark text color */
+  color: var(--clr-text-dark);
   line-height: 1.6;
+  font-size: 0.95em; /* Slightly smaller excerpt */
 }
 
 /* Single Post Layout Styles */
@@ -488,7 +519,7 @@ a:hover {
   margin: 1rem auto; /* Match list page margin */
   padding: 2.5rem 3rem; /* Match list page padding */
   min-height: calc(100vh - 270px); /* Match list page height */
-  background-color: var(--clr-bg-light); /* White background */
+  background-color: var(--clr-bg-paper); /* Use paper background */
   border-radius: 8px; /* Rounded corners */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Match shadow */
   color: var(--clr-text-dark); /* Set base dark text color */
@@ -700,7 +731,22 @@ a:hover {
   .release-notes-page h1 {
     font-size: 1.8em;
   }
-  .release-notes-list h2 {
-    font-size: 1.4em;
+  .release-notes-list li {
+    flex-direction: column;
+    gap: 0;
+  }
+  .release-notes-list .post-meta-column {
+    flex-basis: auto;
+    width: auto;
+    text-align: left; /* Align left on mobile */
+    padding-top: 0;
+    margin-bottom: 0.5rem; /* Space below date/version block */
+  }
+  .release-notes-list .post-version {
+    display: inline-block; /* Put version and date on same line? */
+    margin: 0 0.5rem 0 0;
+  }
+  .release-notes-list .post-meta {
+     display: inline-block; /* Put version and date on same line? */
   }
 } 
