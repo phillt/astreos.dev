@@ -412,4 +412,104 @@ a:hover {
 .feature-content p {
   color: var(--clr-text);
   line-height: 1.7;
+}
+
+/* --- Responsive Styles --- */
+
+@media (max-width: 768px) {
+
+  /* --- General Adjustments --- */
+  body {
+    /* Maybe increase base font size slightly for mobile readability if needed */
+    /* font-size: 17px; */
+  }
+
+  h1, h2, h3 {
+    /* Adjust heading sizes if needed */
+  }
+
+  /* --- Navbar --- */
+  .navbar {
+    padding: 0.8rem 1rem; /* Reduced padding */
+  }
+  .navbar-middle {
+     display: none; /* Hide middle link on small screens */
+  }
+  .navbar-brand-text {
+    font-size: 1em; /* Slightly smaller brand text */
+  }
+  .navbar-logo {
+    height: 30px; /* Smaller logo */
+  }
+  .btn-register {
+    padding: 0.4rem 0.8rem; /* Smaller button */
+    font-size: 0.9em;
+  }
+
+  /* --- Hero Section --- */
+  .hero {
+    padding: 1rem; /* Reduced padding */
+    min-height: calc(100vh - 60px); /* Adjust for potentially smaller navbar */
+  }
+  .hero h1 {
+    font-size: 2.5em; /* Smaller main heading */
+    line-height: 1.1;
+  }
+  .hero p {
+    font-size: 1em;
+  }
+  .hero-image {
+    max-width: 90%; /* Ensure it fits */
+    max-height: 45vh; /* Adjust height limit */
+  }
+
+  /* --- Feature Sections --- */
+  .content-section {
+    padding: 2rem 1rem 0 1rem; /* Reduced padding */
+    min-height: auto; /* Allow natural height */
+  }
+  .content-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 2rem;
+  }
+
+  .feature-item {
+    flex-direction: column !important; /* Stack image and text */
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+  }
+  .feature-item.image-right {
+    flex-direction: column !important; /* Ensure override */
+  }
+
+  .feature-image,
+  .feature-content {
+    flex: 1 1 auto; /* Allow default flex behavior */
+    max-width: 100%; /* Allow full width */
+    text-align: center; /* Center text below image */
+  }
+  .feature-image img {
+     max-width: 80%; /* Limit image width within stack */
+  }
+
+  .feature-content h3 {
+    font-size: 1.3em;
+  }
+
+  /* --- Centered Final Section --- */
+  .feature-item-centered {
+    padding: 3rem 1rem; /* Reduced padding */
+    min-height: auto; /* Allow natural height */
+    gap: 1.5rem;
+  }
+  .centered-brand-logo {
+    height: 50px; /* Smaller logo */
+  }
+  .centered-brand-text {
+    font-size: 3.5em; /* Smaller text */
+  }
+  .feature-item-centered .feature-content {
+    max-width: 90%; /* Allow more width */
+  }
 } 
