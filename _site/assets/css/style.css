@@ -7,6 +7,7 @@
   --clr-accent: #0FB900;
   --clr-accent-light: #12E000;
   --clr-accent-dark: #0D9F00;
+  --clr-accent-rgb: 15, 185, 0; /* RGB for accent */
   --clr-border: #333333;
   --clr-pill-bg: #000000;
   --clr-pill-text: var(--clr-heading); /* Reuse heading color */
@@ -36,6 +37,7 @@ body {
   padding: 0;
   text-align: left;
   padding-top: 70px;
+  position: relative; /* Needed for z-index stacking */
 }
 
 .hero {
@@ -221,4 +223,28 @@ a:hover {
   color: var(--clr-text);
 }
 
-/* Add more specific styles as needed */ 
+/* Add more specific styles as needed */
+
+.background-squares {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Behind other content */
+  overflow: hidden;
+  pointer-events: none; /* Don't interfere with clicks */
+}
+
+.bg-square {
+  position: absolute;
+  /* Use CSS variables set inline for variation */
+  width: var(--sq-size, 50px);
+  height: var(--sq-size, 50px);
+  background-color: rgba(var(--clr-accent-rgb), var(--sq-opacity, 0.1));
+  top: var(--sq-y, 0%);
+  left: var(--sq-x, 0%);
+  transform: rotate(var(--sq-angle, 0deg)); /* Add rotation */
+  /* Optional: Add transition for potential future animations */
+  /* transition: all 0.3s ease; */
+} 

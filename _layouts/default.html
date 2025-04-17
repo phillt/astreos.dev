@@ -7,6 +7,54 @@
     <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   </head>
   <body>
+    <div class="background-squares">
+      <!-- Edge Clusters (Larger, More Opaque, Random Angles, Bunched) -->
+
+      <!-- Cluster 1: Top Left -->
+      <div class="bg-square" style="--sq-size: 120px; --sq-x: 5%; --sq-y: 10%; --sq-opacity: 0.15; --sq-angle: 15deg;"></div>
+      <div class="bg-square" style="--sq-size: 70px; --sq-x: 12%; --sq-y: 18%; --sq-opacity: 0.1; --sq-angle: -25deg;"></div>
+      <div class="bg-square" style="--sq-size: 50px; --sq-x: 8%; --sq-y: 22%; --sq-opacity: 0.08; --sq-angle: 5deg;"></div>
+      <div class="bg-square" style="--sq-size: 90px; --sq-x: 15%; --sq-y: 8%; --sq-opacity: 0.12; --sq-angle: -10deg;"></div>
+      <div class="bg-square" style="--sq-size: 65px; --sq-x: 3%; --sq-y: 15%; --sq-opacity: 0.09; --sq-angle: 30deg;"></div>
+
+      <!-- Cluster 2: Top Right -->
+      <div class="bg-square" style="--sq-size: 80px; --sq-x: 85%; --sq-y: 5%; --sq-opacity: 0.1; --sq-angle: 5deg;"></div>
+      <div class="bg-square" style="--sq-size: 60px; --sq-x: 80%; --sq-y: 12%; --sq-opacity: 0.08; --sq-angle: 30deg;"></div>
+      <div class="bg-square" style="--sq-size: 100px; --sq-x: 90%; --sq-y: 10%; --sq-opacity: 0.11; --sq-angle: -15deg;"></div>
+      <div class="bg-square" style="--sq-size: 45px; --sq-x: 78%; --sq-y: 3%; --sq-opacity: 0.07; --sq-angle: 20deg;"></div>
+      <div class="bg-square" style="--sq-size: 75px; --sq-x: 92%; --sq-y: 15%; --sq-opacity: 0.09; --sq-angle: -5deg;"></div>
+
+      <!-- Cluster 3: Bottom Right -->
+      <div class="bg-square" style="--sq-size: 150px; --sq-x: 90%; --sq-y: 75%; --sq-opacity: 0.12; --sq-angle: -10deg;"></div>
+      <div class="bg-square" style="--sq-size: 100px; --sq-x: 85%; --sq-y: 82%; --sq-opacity: 0.1; --sq-angle: 20deg;"></div>
+      <div class="bg-square" style="--sq-size: 70px; --sq-x: 95%; --sq-y: 85%; --sq-opacity: 0.08; --sq-angle: 5deg;"></div>
+      <div class="bg-square" style="--sq-size: 120px; --sq-x: 82%; --sq-y: 72%; --sq-opacity: 0.11; --sq-angle: -20deg;"></div>
+
+      <!-- Cluster 4: Bottom Left -->
+      <div class="bg-square" style="--sq-size: 60px; --sq-x: 15%; --sq-y: 80%; --sq-opacity: 0.08; --sq-angle: -5deg;"></div>
+      <div class="bg-square" style="--sq-size: 80px; --sq-x: 10%; --sq-y: 88%; --sq-opacity: 0.09; --sq-angle: 10deg;"></div>
+      <div class="bg-square" style="--sq-size: 40px; --sq-x: 20%; --sq-y: 85%; --sq-opacity: 0.06; --sq-angle: 25deg;"></div>
+      <div class="bg-square" style="--sq-size: 75px; --sq-x: 5%; --sq-y: 78%; --sq-opacity: 0.07; --sq-angle: -15deg;"></div>
+
+      <!-- Cluster 5: Left Middle -->
+      <div class="bg-square" style="--sq-size: 90px; --sq-x: -5%; --sq-y: 40%; --sq-opacity: 0.1; --sq-angle: 45deg;"></div>
+      <div class="bg-square" style="--sq-size: 50px; --sq-x: 2%; --sq-y: 48%; --sq-opacity: 0.07; --sq-angle: -15deg;"></div>
+      <div class="bg-square" style="--sq-size: 70px; --sq-x: -2%; --sq-y: 55%; --sq-opacity: 0.09; --sq-angle: 20deg;"></div>
+      <div class="bg-square" style="--sq-size: 45px; --sq-x: 5%; --sq-y: 38%; --sq-opacity: 0.06; --sq-angle: -30deg;"></div>
+
+      <!-- Single Top Middle -->
+      <div class="bg-square" style="--sq-size: 110px; --sq-x: 60%; --sq-y: -8%; --sq-opacity: 0.09; --sq-angle: 10deg;"></div>
+
+      <!-- Mid/Center Squares (Smaller, Less Opaque, Milder Angles) -->
+      <div class="bg-square" style="--sq-size: 40px; --sq-x: 48%; --sq-y: 25%; --sq-opacity: 0.05; --sq-angle: 3deg;"></div>
+      <div class="bg-square" style="--sq-size: 35px; --sq-x: 30%; --sq-y: 50%; --sq-opacity: 0.04; --sq-angle: -2deg;"></div>
+      <div class="bg-square" style="--sq-size: 50px; --sq-x: 65%; --sq-y: 60%; --sq-opacity: 0.06; --sq-angle: 5deg;"></div>
+      <div class="bg-square" style="--sq-size: 45px; --sq-x: 55%; --sq-y: 40%; --sq-opacity: 0.05; --sq-angle: -4deg;"></div>
+      <div class="bg-square" style="--sq-size: 30px; --sq-x: 40%; --sq-y: 65%; --sq-opacity: 0.03; --sq-angle: 1deg;"></div>
+      <div class="bg-square" style="--sq-size: 42px; --sq-x: 60%; --sq-y: 30%; --sq-opacity: 0.04; --sq-angle: 0deg;"></div>
+
+      <!-- Add MANY more squares here, adjusting values for desired density and effect -->
+    </div>
     {% include navbar.html %}
     {{ content }}
   </body>
