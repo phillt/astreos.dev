@@ -243,24 +243,35 @@ a:hover {
 }
 */
 
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6; /* Adjust for more/less noticeable shimmer */
+  }
+}
+
 .bg-square {
   position: absolute;
   width: var(--sq-size, 50px);
   height: var(--sq-size, 50px);
-  background-color: rgba(var(--clr-accent-rgb), var(--sq-opacity, 0.1));
+  background-color: rgba(var(--clr-accent-rgb), var(--sq-opacity, 0.1)); /* Opacity controlled by --sq-opacity */
   top: var(--sq-y, 0%);
   left: var(--sq-x, 0%);
   transform: rotate(var(--sq-angle, 0deg));
-  transition: width 0.5s ease, height 0.5s ease, transform 0.5s ease, background-color 0.5s ease; /* Keep transition */
-  pointer-events: none; /* Squares themselves don't block clicks */
+  /* Ensure background-color is in transition */
+  transition: width 0.5s ease, height 0.5s ease, transform 0.5s ease, background-color 0.5s ease, opacity 0.5s ease;
+  pointer-events: none;
+  animation: shimmer 4s ease-in-out infinite alternate;
 }
 
-/* Styles for the ordered state triggered by JS */
+/* Styles for the ordered state triggered by JS class */
 .bg-square.bg-square--ordered {
-  width: 30px; /* Uniform smaller size */
+  width: 30px;
   height: 30px;
-  transform: rotate(0deg); /* Uniform rotation (ordered) */
-  background-color: rgba(var(--clr-accent-rgb), 0.12); /* Slightly increase opacity */
+  /* background-color: rgba(var(--clr-accent-rgb), 0.12); Removed - JS will handle opacity via --sq-opacity */
+  opacity: 1; /* Ensure full opacity for element, overriding shimmer */
 }
 
 /* Remove cluster wrapper hover styles */
