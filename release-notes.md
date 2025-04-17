@@ -22,6 +22,17 @@ permalink: /releases/
             {{ post.excerpt }}
           </div>
         </div>
+        <div class="post-download-column">
+          {% if post.download_windows %}
+            <a href="{{ post.download_windows }}" class="btn btn-download windows" title="Download for Windows">Win</a>
+          {% endif %}
+          {% if post.download_macos %}
+            <a href="{{ post.download_macos }}" class="btn btn-download macos" title="Download for macOS">Mac</a>
+          {% endif %}
+          {% if post.download_linux %}
+            <a href="{{ post.download_linux }}" class="btn btn-download linux" title="Download for Linux">Lin</a>
+          {% endif %}
+        </div>
       </li>
     {% endfor %}
   </ul>
