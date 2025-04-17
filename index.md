@@ -9,8 +9,6 @@ title: "Astreos (beta) - Take Control of Your Budgeting"
   <img src="{{ '/assets/images/app-single.png' | relative_url }}" alt="App Screenshot" class="hero-image">
 </div>
 
----
-
 <section id="features" class="content-section">
   <h2>What You Can Do with Astreos</h2>
 
@@ -26,7 +24,7 @@ title: "Astreos (beta) - Take Control of Your Budgeting"
 
   <div class="feature-item image-right">
     <div class="feature-image">
-      <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Tracking Feature">
+      <img src="{{ '/assets/images/bills-section.png' | relative_url }}" alt="Tracking Feature">
     </div>
     <div class="feature-content">
       <h3>Track bills and spending</h3>
@@ -36,7 +34,7 @@ title: "Astreos (beta) - Take Control of Your Budgeting"
 
   <div class="feature-item image-left">
     <div class="feature-image">
-      <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Rollover Feature">
+      <img src="{{ '/assets/images/rollover.png' | relative_url }}" alt="Rollover Feature">
     </div>
     <div class="feature-content">
       <h3>Roll over leftover money</h3>
@@ -46,7 +44,7 @@ title: "Astreos (beta) - Take Control of Your Budgeting"
 
   <div class="feature-item image-right">
     <div class="feature-image">
-      <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Due Dates Feature">
+      <img src="{{ '/assets/images/stay-on-top.png' | relative_url }}" alt="Due Dates Feature">
     </div>
     <div class="feature-content">
       <h3>Stay on top of due dates</h3>
@@ -54,38 +52,15 @@ title: "Astreos (beta) - Take Control of Your Budgeting"
     </div>
   </div>
 
-  <div class="feature-item image-left">
-    <div class="feature-image">
-      <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Control Feature">
+</section>
+
+<section id="control" class="feature-item-centered">
+    <div class="centered-brand">
+      <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="Logo" class="centered-brand-logo">
+      <span class="centered-brand-text">Astreos</span>
     </div>
     <div class="feature-content">
       <h3>Budget without giving up control</h3>
       <p>No subscriptions, no account required, no syncing to your bank. Your data stays with you.</p>
     </div>
-  </div>
-
-</section>
-
----
-
-<section id="about" class="section-container">
-  <div class="section-image">
-    <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="About Image">
-  </div>
-  <div class="section-content">
-    <h2>Finally, a Budget That Makes Sense</h2>
-    <p>Astreos is made for real people — even if you've never budgeted before. Just tell it when you get paid, what bills you have, and what money you spend. Astreos breaks everything into easy pay periods, shows you what's coming up, and helps you stay ahead — without judgment or spreadsheets. And it works right on your computer, with no accounts or data tracking.</p>
-  </div>
-</section>
-
----
-
-<section id="contact" class="section-container">
-  <div class="section-image">
-    <img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="Contact Image">
-  </div>
-  <div class="section-content">
-    <h2>Contact</h2>
-    <p>Get in touch with us. [Add contact information or a form link here].</p>
-  </div>
-</section>
+  </section>
