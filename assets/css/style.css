@@ -79,12 +79,6 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
 }
 
-.main-content-container {
-  max-width: 1000px; /* Adjust as desired */
-  margin: 0 auto; /* Center the container */
-  padding: 0 2rem; /* Horizontal padding */
-}
-
 h1, h2, h3 {
   color: var(--clr-heading);
 }
@@ -186,13 +180,13 @@ a:hover {
 
 /* Section Styles */
 .content-section { /* Used for Features */
-  padding: 4rem 0;
+  padding: 4rem 2rem; /* Add horizontal padding */
   border-bottom: 1px solid var(--clr-border);
-  min-height: 100vh; /* Set min-height to viewport height */
-  display: flex; /* Enable flexbox for vertical centering */
+  min-height: 100vh;
+  display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  box-sizing: border-box; /* Include padding in height calculation */
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .content-section:last-of-type {
@@ -253,15 +247,13 @@ a:hover {
 /* Keep .section-container for About/Contact if needed, but update */
 .section-container { /* Used for About/Contact */
   display: flex;
-  /* align-items: center; Now handled by inner content? Maybe keep for single row */
   gap: 3rem;
-  padding: 4rem 0;
-  margin-bottom: 0; /* Remove margin between full-height sections */
+  padding: 4rem 2rem; /* Add horizontal padding */
+  margin-bottom: 0;
   border-bottom: 1px solid var(--clr-border);
-  min-height: 100vh; /* Set min-height to viewport height */
-  box-sizing: border-box; /* Include padding */
-  /* If content should center vertically within section-container: */
-  flex-direction: column; 
+  min-height: 100vh;
+  box-sizing: border-box;
+  flex-direction: column;
   justify-content: center;
 }
 
