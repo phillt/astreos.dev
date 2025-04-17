@@ -1,0 +1,224 @@
+:root {
+  --clr-bg: #111827;
+  --clr-text: #e0e0e0;
+  --clr-text-subtle: #c0c0c0;
+  --clr-text-dim: #a0a0a0;
+  --clr-heading: #ffffff;
+  --clr-accent: #0FB900;
+  --clr-accent-light: #12E000;
+  --clr-accent-dark: #0D9F00;
+  --clr-border: #333333;
+  --clr-pill-bg: #000000;
+  --clr-pill-text: var(--clr-heading); /* Reuse heading color */
+  --clr-button-text: var(--clr-heading); /* Reuse heading color */
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('../fonts/IBMPlexSans-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-weight: 100 700; /* Range of weights available */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans';
+  src: url('../fonts/IBMPlexSans-Italic-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-weight: 100 700; /* Range of weights available */
+  font-style: italic;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  padding-top: 70px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px); /* Adjust 70px based on actual navbar height */
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.hero h1 {
+  font-size: 3.5em;
+  font-weight: 500;
+  color: var(--clr-heading);
+  max-width: 650px;
+  margin-bottom: 0.5em;
+  line-height: 1;
+  margin-top: 0;
+}
+
+.hero p {
+  margin-top: 0;
+  font-size: 1.1em;
+  line-height: 1.6;
+  max-width: 650px;
+  color: var(--clr-text-subtle);
+}
+
+.hero-image {
+  margin-top: 2rem; /* Add some space above the image */
+  max-width: 80%; /* Adjust as needed */
+  max-height: 50vh; /* Limit height relative to viewport height */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+}
+
+.main-content-container {
+  max-width: 1000px; /* Adjust as desired */
+  margin: 0 auto; /* Center the container */
+  padding: 0 2rem; /* Horizontal padding */
+}
+
+h1, h2, h3 {
+  color: var(--clr-heading);
+}
+
+a {
+  color: var(--clr-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--clr-accent-light);
+  text-decoration: none;
+}
+
+.beta-pill {
+  display: inline-block;
+  background-color: var(--clr-pill-bg);
+  color: var(--clr-pill-text);
+  padding: 0.1em 0.5em;
+  margin-left: 0.5em;
+  border-radius: 0.8em;
+  font-size: 0.5em;
+  font-weight: bold;
+  vertical-align: middle;
+  position: static;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.navbar-brand-link {
+  display: inline-flex; /* Align items horizontally */
+  align-items: center; /* Align items vertically */
+  text-decoration: none; /* Remove underline from link */
+}
+
+.navbar-logo {
+  height: 40px; /* Adjust as needed */
+  vertical-align: middle; /* Keep vertical alignment */
+  margin-right: 0.5em; /* Space between logo and text */
+}
+
+.navbar-brand-text {
+  color: var(--clr-text);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.navbar-middle ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar-middle li {
+  margin: 0 1rem;
+}
+
+.navbar-middle a {
+  color: var(--clr-text-dim);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar-middle a:hover {
+  color: var(--clr-text);
+  text-decoration: none;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-register {
+  background-color: var(--clr-accent);
+  color: var(--clr-button-text);
+}
+
+.btn-register:hover {
+  background-color: var(--clr-accent-dark);
+}
+
+/* Section Styles */
+.section-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--clr-border);
+  min-height: 60vh;
+}
+
+.section-container:last-child {
+  border-bottom: none; /* Remove border from last section */
+}
+
+.section-image {
+  flex: 1; /* Adjust flex ratio as needed */
+  text-align: center;
+}
+
+.section-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: rounded corners for images */
+}
+
+.section-content {
+  flex: 2; /* Adjust flex ratio as needed */
+  text-align: left;
+}
+
+.section-content h2 {
+  margin-top: 0;
+  color: var(--clr-heading);
+}
+
+.section-content p {
+  color: var(--clr-text);
+}
+
+/* Add more specific styles as needed */ 
