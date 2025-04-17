@@ -24,13 +24,22 @@ permalink: /releases/
         </div>
         <div class="post-download-column">
           {% if post.download_windows %}
-            <a href="{{ post.download_windows }}" class="btn btn-download windows" title="Download for Windows">Win</a>
+            <a href="{{ post.download_windows }}" class="btn btn-download windows" title="Download for Windows">
+              <i class="fa-brands fa-windows"></i>
+              <span class="btn-label">Windows</span>
+            </a>
           {% endif %}
           {% if post.download_macos %}
-            <a href="{{ post.download_macos }}" class="btn btn-download macos" title="Download for macOS">Mac</a>
+            <a href="{{ post.download_macos }}" class="btn btn-download macos" title="Download for macOS">
+              <i class="fa-brands fa-apple"></i>
+              <span class="btn-label">macOS</span>
+            </a>
           {% endif %}
           {% if post.download_linux %}
-            <a href="{{ post.download_linux }}" class="btn btn-download linux" title="Download for Linux">Lin</a>
+            <a href="{{ post.download_linux }}" class="btn btn-download linux" title="Download for Linux">
+              <i class="fa-brands fa-linux"></i>
+              <span class="btn-label">Linux</span>
+            </a>
           {% endif %}
         </div>
       </li>

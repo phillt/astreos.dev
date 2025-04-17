@@ -454,22 +454,26 @@ a:hover {
 
 .release-notes-list li {
   display: flex;
-  align-items: stretch; /* Make columns equal height */
-  gap: 1.5rem;
+  align-items: stretch;
+  gap: 0; /* Remove gap, handled by padding & border */
   margin-bottom: 0;
   border-top: 1px solid #e5e7eb;
 }
 
 .release-notes-list .post-meta-column,
-.release-notes-list .post-details {
-  padding: 1rem;
+.release-notes-list .post-details,
+.release-notes-list .post-download-column {
+  padding: 1.5rem 1rem; /* Uniform padding */
+  display: flex; /* Enable flex for alignment */
+  flex-direction: column; /* Default direction */
+  justify-content: center; /* Center content vertically */
 }
 
 .release-notes-list .post-meta-column {
-  flex: 0 0 120px; /* Fixed width for this column */
-  text-align: right; /* Align text right */
-  border-right: 1px dashed var(--clr-text-subtle);
-
+  flex: 0 0 120px;
+  text-align: right;
+  border-right: 1px dashed var(--clr-meta-dark);
+  align-items: flex-end; /* Align text to the right */
 }
 
 .release-notes-list .post-version {
@@ -488,6 +492,8 @@ a:hover {
 
 .release-notes-list .post-details {
   flex: 1;
+  border-right: 1px dashed var(--clr-meta-dark);
+  justify-content: flex-start; /* Align text to top */
 }
 
 .release-notes-list h2 {
@@ -511,6 +517,46 @@ a:hover {
   color: var(--clr-text-dark);
   line-height: 1.6;
   font-size: 0.95em; /* Slightly smaller excerpt */
+}
+
+.release-notes-list .post-download-column {
+  flex: 0 0 140px; /* Increase width for text */
+  align-items: stretch; /* Stretch buttons full width */
+  gap: 0.5rem;
+}
+
+.btn-download {
+  display: inline-flex;
+  justify-content: flex-start; /* Align icon/text left */
+  align-items: center;
+  padding: 0.5rem 0.8rem; /* Adjust padding */
+  /* width: auto; Remove fixed width */
+  /* height: auto; Remove fixed height */
+  font-size: 0.9em; /* Smaller base font size */
+  text-decoration: none;
+  border: 1px solid var(--clr-meta-dark);
+  background-color: transparent;
+  color: var(--clr-text-dark);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  gap: 0.5em; /* Space between icon and text */
+}
+
+.btn-download i {
+  font-size: 1.2em; /* Keep icon slightly larger */
+  width: 1.2em; /* Allocate fixed space for icon */
+  text-align: center;
+}
+
+.btn-download .btn-label {
+  /* Styles for the label if needed */
+}
+
+.btn-download:hover {
+  background-color: var(--clr-text-dark);
+  color: var(--clr-bg-paper);
+  border-color: var(--clr-text-dark);
 }
 
 /* Single Post Layout Styles */
@@ -735,18 +781,47 @@ a:hover {
     flex-direction: column;
     gap: 0;
   }
-  .release-notes-list .post-meta-column {
+  .release-notes-list .post-meta-column,
+  .release-notes-list .post-details,
+  .release-notes-list .post-download-column {
     flex-basis: auto;
     width: auto;
-    text-align: left; /* Align left on mobile */
-    padding-top: 0;
-    margin-bottom: 0.5rem; /* Space below date/version block */
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px dashed var(--clr-meta-dark); /* Separator when stacked */
+    align-items: flex-start; /* Align left */
   }
-  .release-notes-list .post-version {
-    display: inline-block; /* Put version and date on same line? */
-    margin: 0 0.5rem 0 0;
+  .release-notes-list li:last-child .post-download-column {
+    border-bottom: none;
   }
-  .release-notes-list .post-meta {
-     display: inline-block; /* Put version and date on same line? */
+
+  .release-notes-list .post-meta-column {
+    text-align: left;
+    padding-bottom: 0.5rem; /* Less padding */
+    border-bottom: none; /* Remove double border */
+  }
+
+  .release-notes-list .post-details {
+     padding-top: 0.5rem;
+     padding-bottom: 1rem;
+  }
+
+  .release-notes-list .post-download-column {
+    flex-basis: auto;
+    width: auto;
+    align-items: stretch; /* Stretch buttons horizontally */
+    flex-direction: column; /* Stack buttons again on mobile */
+    gap: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: none; /* Remove bottom border */
+  }
+
+  .release-notes-list li:last-child .post-download-column {
+     /* border-bottom: none; Already removed */
+  }
+
+  .btn-download {
+    justify-content: center; /* Center content on mobile buttons */
   }
 } 
