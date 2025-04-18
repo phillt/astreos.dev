@@ -12,6 +12,15 @@
   --clr-pill-bg: #000000;
   --clr-pill-text: var(--clr-heading); /* Reuse heading color */
   --clr-button-text: var(--clr-heading); /* Reuse heading color */
+  --clr-bg-subtle: #27272a; /* Subtle background gray */
+
+  /* Light Theme Specific */
+  --clr-bg-light: #ffffff;
+  --clr-bg-paper: #fbfbf8; /* Subtle off-white paper color */
+  --clr-text-dark: #1f2937; /* Dark Gray for text */
+  --clr-heading-dark: #111827; /* Very Dark Gray/Black for headings */
+  --clr-meta-dark: #6b7280; /* Medium Gray for meta */
+  --clr-accent-darker: #057a00; /* Darker Green for hover on light bg */
 }
 
 @font-face {
@@ -414,6 +423,309 @@ a:hover {
   line-height: 1.7;
 }
 
+/* Release Notes Page Styles */
+.release-notes-page {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem 2rem; /* Adjust padding */
+  min-height: calc(100vh - 270px); /* Adjust for navbar, extend close to bottom */
+  background-color: var(--clr-bg-paper); /* Use paper background */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.release-notes-page h1 {
+  text-align: left; /* Align title left */
+  margin-bottom: 2rem;
+  color: var(--clr-heading-dark);
+}
+
+.release-notes-list {
+  list-style: none;
+  margin-top: 0;
+  border-bottom: 1px solid var(--clr-text-subtle);
+  border-top: 1px solid var(--clr-text-subtle);
+   /* Subtle top border for the list */
+}
+
+.release-notes-list li:first-of-type {
+  border-top: none;
+}
+
+.release-notes-list li {
+  display: flex;
+  align-items: stretch;
+  gap: 0; /* Remove gap, handled by padding & border */
+  margin-bottom: 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+.release-notes-list .post-meta-column,
+.release-notes-list .post-details,
+.release-notes-list .post-download-column {
+  padding: 1.5rem 1rem; /* Uniform padding */
+  display: flex; /* Enable flex for alignment */
+  flex-direction: column; /* Default direction */
+  justify-content: center; /* Center content vertically */
+}
+
+.release-notes-list .post-meta-column {
+  flex: 0 0 120px;
+  text-align: right;
+  border-right: 1px dashed var(--clr-meta-dark);
+  align-items: flex-end; /* Align text to the right */
+}
+
+.release-notes-list .post-version {
+  font-weight: normal;
+  color: var(--clr-heading-dark); /* Match heading color */
+  margin: 0 0 0.25rem 0; /* Margin below version */
+  font-size: 0.95em;
+}
+
+.release-notes-list .post-meta {
+  color: var(--clr-meta-dark);
+  font-size: 0.85em;
+  margin-bottom: 0;
+  /* text-align: right; Handled by parent */
+}
+
+.release-notes-list .post-details {
+  flex: 1;
+  border-right: 1px dashed var(--clr-meta-dark);
+  justify-content: flex-start; /* Align text to top */
+}
+
+.release-notes-list h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem; /* Space below title */
+  font-size: 1.3em; /* Adjust size */
+  line-height: 1.3;
+}
+
+.release-notes-list h2 a {
+  text-decoration: none;
+  color: var(--clr-heading-dark); /* Dark heading color */
+}
+
+.release-notes-list h2 a:hover {
+  color: var(--clr-accent-darker); /* Use darker accent for hover */
+}
+
+.post-excerpt p {
+  margin: 0;
+  color: var(--clr-text-dark);
+  line-height: 1.6;
+  font-size: 0.95em; /* Slightly smaller excerpt */
+}
+
+.release-notes-list .post-download-column {
+  flex: 0 0 140px; /* Increase width for text */
+  align-items: stretch; /* Stretch buttons full width */
+  gap: 0.5rem;
+}
+
+.btn-download {
+  display: inline-flex;
+  justify-content: flex-start; /* Align icon/text left */
+  align-items: center;
+  padding: 0.5rem 0.8rem; /* Adjust padding */
+  /* width: auto; Remove fixed width */
+  /* height: auto; Remove fixed height */
+  font-size: 0.9em; /* Smaller base font size */
+  text-decoration: none;
+  border: 1px solid var(--clr-meta-dark);
+  background-color: transparent;
+  color: var(--clr-text-dark);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  gap: 0.5em; /* Space between icon and text */
+}
+
+.btn-download i {
+  font-size: 1.2em; /* Keep icon slightly larger */
+  width: 1.2em; /* Allocate fixed space for icon */
+  text-align: center;
+}
+
+.btn-download .btn-label {
+  /* Styles for the label if needed */
+}
+
+.btn-download:hover {
+  background-color: var(--clr-text-dark);
+  color: var(--clr-bg-paper);
+  border-color: var(--clr-text-dark);
+}
+
+/* Single Post Layout Styles */
+.post-layout {
+  max-width: 800px; /* Match list page width */
+  margin: 1rem auto; /* Match list page margin */
+  padding: 2.5rem 3rem; /* Match list page padding */
+  min-height: calc(100vh - 270px); /* Match list page height */
+  background-color: var(--clr-bg-paper); /* Use paper background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Match shadow */
+  color: var(--clr-text-dark); /* Set base dark text color */
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem; /* Space below header */
+  gap: 1rem;
+}
+
+.post-header-downloads {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0; /* Prevent buttons from shrinking too much */
+}
+
+.post-header-downloads .btn-download {
+  padding: 0.4rem 0.6rem; /* Slightly smaller padding */
+  font-size: 0.8em;
+  gap: 0.4em;
+}
+
+.post-header-downloads .btn-download i {
+  font-size: 1.1em;
+  width: auto; /* Auto width for icon */
+}
+
+.btn-label-inline {
+  /* Styles for inline label if needed */
+}
+
+.post-layout h1 {
+  margin-top: 0;
+  margin-bottom: 0; /* Removed margin */
+  color: var(--clr-heading-dark);
+  font-size: 2em; /* Adjust size */
+  line-height: 1.2;
+}
+
+.post-subheading {
+  margin-bottom: 2rem;
+  color: var(--clr-meta-dark);
+  font-size: 0.9em;
+  padding-bottom: 1rem; /* Add padding below */
+  border-bottom: 1px solid #e5e7eb; /* Subtle bottom border */
+}
+
+.post-subheading .post-version {
+  font-weight: 600; /* Slightly bolder version */
+}
+
+.post-subheading .separator {
+  margin: 0 0.5em;
+}
+
+.post-layout .post-meta {
+  /* Removed styles as it's now part of subheading */
+}
+
+.post-layout .post-content {
+  line-height: 1.7;
+}
+
+.post-layout .post-content h2,
+.post-layout .post-content h3,
+.post-layout .post-content h4 {
+  color: var(--clr-heading-dark);
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+}
+
+.post-layout .post-content p,
+.post-layout .post-content li {
+  margin-bottom: 1em;
+}
+
+.post-layout .post-content a {
+  color: var(--clr-accent);
+  text-decoration: underline;
+}
+
+.post-layout .post-content a:hover {
+  color: var(--clr-accent-darker);
+}
+
+/* Adjustments for post layout on mobile */
+@media (max-width: 768px) {
+  .post-header {
+    flex-direction: column;
+    align-items: flex-start; /* Align title left */
+  }
+  .post-header-downloads {
+    margin-top: 0.8rem;
+  }
+  .post-layout {
+    padding: 2rem 1.5rem;
+    margin: 2rem auto;
+    min-height: auto; /* Allow natural height */
+  }
+  .post-layout h1 {
+    font-size: 1.8em;
+  }
+  .post-subheading {
+    font-size: 0.85em;
+  }
+}
+
+/* Breadcrumbs Styles */
+.breadcrumbs-container {
+  max-width: 800px; /* Match post content width */
+  margin: 2rem auto 0 auto; /* Margin above, centered */
+  padding: 0 1rem; /* Match post padding horizontally */
+}
+
+.breadcrumbs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.breadcrumbs li {
+  display: inline;
+}
+
+.breadcrumbs li:not(:last-child)::after {
+  content: " / "; /* Separator */
+  margin: 0 0.5em;
+  color: var(--clr-meta-dark); /* Use meta color for separator */
+}
+
+.breadcrumbs a {
+  color: var(--clr-accent); /* Use accent color for links */
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+  color: var(--clr-accent-darker);
+}
+
+.breadcrumbs li.current {
+  color: var(--clr-bg-light); /* Dark text for current page */
+  font-weight: bold;
+}
+
+/* Adjustments for breadcrumbs on mobile */
+@media (max-width: 768px) {
+  .breadcrumbs-container {
+    margin-top: 1rem;
+    padding: 0 1.5rem;
+  }
+  .breadcrumbs {
+    font-size: 0.8em;
+  }
+}
+
 /* --- Responsive Styles --- */
 
 @media (max-width: 768px) {
@@ -512,4 +824,112 @@ a:hover {
   .feature-item-centered .feature-content {
     max-width: 90%; /* Allow more width */
   }
+
+  /* Adjustments for release notes page on mobile */
+  .release-notes-page {
+    padding: 2rem 1.5rem;
+    margin: 2rem auto;
+  }
+  .release-notes-page h1 {
+    font-size: 1.8em;
+  }
+  .release-notes-list li {
+    flex-direction: column;
+    gap: 0;
+  }
+  .release-notes-list .post-meta-column,
+  .release-notes-list .post-details,
+  .release-notes-list .post-download-column {
+    flex-basis: auto;
+    width: auto;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px dashed var(--clr-meta-dark); /* Separator when stacked */
+    align-items: flex-start; /* Align left */
+  }
+  .release-notes-list li:last-child .post-download-column {
+    border-bottom: none;
+  }
+
+  .release-notes-list .post-meta-column {
+    text-align: left;
+    padding-bottom: 0.5rem; /* Less padding */
+    border-bottom: none; /* Remove double border */
+  }
+
+  .release-notes-list .post-details {
+     padding-top: 0.5rem;
+     padding-bottom: 1rem;
+  }
+
+  .release-notes-list .post-download-column {
+    flex-basis: auto;
+    width: auto;
+    align-items: stretch; /* Stretch buttons horizontally */
+    flex-direction: column; /* Stack buttons again on mobile */
+    gap: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: none; /* Remove bottom border */
+  }
+
+  .release-notes-list li:last-child .post-download-column {
+     /* border-bottom: none; Already removed */
+  }
+
+  .btn-download {
+    justify-content: center; /* Center content on mobile buttons */
+  }
+}
+
+.download-label {
+  font-size: 0.8em;
+  color: var(--clr-meta-dark);
+  margin: 0 0.5em 0 0; /* Default right margin */
+  display: inline-block; /* Align with buttons */
+  line-height: 1.5; /* Align with button text */
+}
+
+.post-header-downloads {
+  display: flex;
+  align-items: center; /* Vertically align label and buttons */
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Adjust list view download column */
+.release-notes-list .post-download-column {
+  flex: 0 0 140px;
+  align-items: stretch;
+  gap: 0.3rem; /* Slightly reduce gap */
+  padding-top: 1rem; /* Adjust padding to align label nicely */
+}
+
+.release-notes-list .post-download-column .download-label {
+  text-align: center; /* Center label above buttons */
+  margin-bottom: 0.4rem; /* Space below label */
+  width: 100%; /* Take full width */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .post-header-downloads {
+    margin-top: 0.8rem;
+    flex-wrap: wrap; /* Allow wrapping if needed */
+  }
+  .download-label {
+    /* Ensure label looks okay on mobile */
+     margin-bottom: 0.3em; 
+  }
+  .release-notes-list .post-download-column {
+     /* Buttons are row on mobile, adjust label */
+     flex-direction: row;
+     align-items: center;
+     flex-wrap: wrap; 
+  }
+   .release-notes-list .post-download-column .download-label {
+     width: auto; /* Reset width */
+     text-align: left;
+     margin-bottom: 0; /* Remove bottom margin */
+   }
 } 

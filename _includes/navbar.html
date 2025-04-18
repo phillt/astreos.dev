@@ -1,6 +1,6 @@
 <nav class="navbar">
   <div class="navbar-left">
-    <a href="#" class="navbar-brand-link">
+    <a href="{{ '/' | relative_url }}" class="navbar-brand-link">
       <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="Logo" class="navbar-logo">
       <span class="navbar-brand-text">Astreos</span>
       <span class="beta-pill">beta</span>
@@ -9,6 +9,9 @@
   <div class="navbar-middle">
     <ul>
       <li><a href="#features">Features</a></li>
+      {% if site.posts.size > 0 %}
+      <li><a href="{{ '/releases/' | relative_url }}">Releases</a></li>
+      {% endif %}
     </ul>
   </div>
   <div class="navbar-right">
