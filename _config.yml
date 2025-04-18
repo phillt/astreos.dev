@@ -1,5 +1,6 @@
 title: "Astreos"
 url: "https://astreos.app"
+BASE_URL: "https://astreos.app"
 baseurl: ""
 
 include:
