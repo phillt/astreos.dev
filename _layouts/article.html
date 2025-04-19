@@ -31,8 +31,20 @@ layout: default
     <span class="post-meta">{{ page.date | date_to_string }}</span>
   </div>
 
+  {% if page.cover_image %}
+  <div class="post-cover-image">
+    <img src="{{ page.cover_image }}" alt="{{ page.title }}" />
+  </div>
+  {% endif %}
+
   <div class="post-content">
     {{ content }}
+  </div>
+
+  <div class="post-cta">
+    <h3>Ready to take control of your budget?</h3>
+    <p>Download Astreos today and start budgeting on your terms - no syncing, no subscriptions, just simple and effective budgeting.</p>
+    {% include download-buttons.html use_release_post=true %}
   </div>
 </article>
 </div> 

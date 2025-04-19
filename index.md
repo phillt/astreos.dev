@@ -8,26 +8,7 @@ title: "Astreos (beta) - Take Control of Your Budgeting"
   <div class="hero-content">
     <h1>Spending is easy. Budgeting should be too.</h1>
     <p>No subscriptions. No tracking. Just powerful budgeting built for how you actually get paid — bi-weekly, monthly, or whenever your paycheck hits.</p>
-    <div class="hero-downloads">
-      
-      {% if latest_post.download_windows %}
-        <a href="{{ latest_post.download_windows }}" class="btn btn-download windows" title="Download for Windows">
-          <i class="fab fa-windows"></i>
-          <span class="btn-label-inline">Windows</span>
-        </a>
-      {% endif %}
-      {% if latest_post.download_linux %}
-        <a href="{{ latest_post.download_linux }}" class="btn btn-download linux" title="Download for Linux">
-          <i class="fab fa-linux"></i>
-          <span class="btn-label-inline">Linux</span>
-        </a>
-      {% endif %}
-      <a class="btn btn-download Mac disabled" title="Download for MacOs">
-          <i class="fab fa-apple"></i>
-          <span class="btn-label-inline">MacOS</span> 
-          <span class="btn-sub-inline" >soon</span>
-        </a>
-    </div>
+    {% include download-buttons.html latest_post=latest_post %}
   </div>
   <img src="{{ '/assets/images/app-feature.png' | relative_url }}" alt="Astreos offline budgeting app screenshot" class="hero-image">
 </div>
