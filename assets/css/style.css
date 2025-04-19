@@ -620,26 +620,22 @@ a:hover {
   text-align: center;
 }
 
-.btn-download .btn-label {
-  /* Styles for the label if needed */
-}
 
-.btn-download:hover {
-  background-color: var(--clr-text-dark);
-  color: var(--clr-bg-paper);
-  border-color: var(--clr-text-dark);
-}
 
+.post-layout-container {
+  width: 100%; /* Match list page width */
+  margin: 1rem auto; /* Match list page margin */
+  padding: 2.5rem 3rem; /* Match list page padding */
+  min-height: calc(100vh - 270px); /* Match list page height */
+  background-color: var(--color-gray-dark); /* Use paper background */
+}
 /* Single Post Layout Styles */
 .post-layout {
   max-width: 1000px; /* Match list page width */
   margin: 1rem auto; /* Match list page margin */
   padding: 2.5rem 3rem; /* Match list page padding */
   min-height: calc(100vh - 270px); /* Match list page height */
-  background-color: var(--clr-bg-paper); /* Use paper background */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Match shadow */
-  color: var(--clr-text-dark); /* Set base dark text color */
+  color: var(--color-gray-lightest); /* Set base dark text color */
 }
 
 .post-header {
@@ -665,10 +661,31 @@ a:hover {
 .post-header-downloads .btn-download i {
   font-size: 1.1em;
   width: auto; /* Auto width for icon */
+    color: var(--color-gray-light);
+}
+
+.post-header-downloads .btn-download:hover i {
+  color: var(--color-gray-darker);
 }
 
 .btn-label-inline {
   /* Styles for inline label if needed */
+  color: var(--color-gray-lightest);
+}
+
+.post-header-downloads .download-label {
+  color: var(--color-gray-light);
+}
+
+ .post-header-downloads .btn-download:hover {
+  color: var(--color-gray-darkest);
+  border-color: var(--color-gray-lightest);
+  background-color: var(--color-gray-light);
+}
+
+.post-header-downloads .btn-download:hover .btn-label-inline {
+  /* Styles for inline label if needed */
+  color: var(--color-gray-darkest);
 }
 
 .btn-sub-inline {
@@ -680,9 +697,13 @@ a:hover {
 .post-layout h1 {
   margin-top: 0;
   margin-bottom: 0; /* Removed margin */
-  color: var(--clr-heading-dark);
+  color: var(--color-gray-lightest);
   font-size: 2em; /* Adjust size */
   line-height: 1.2;
+}
+
+.post-layout .post-content h2 {
+  color: var(--color-gray-lightest);
 }
 
 .post-subheading {
@@ -712,9 +733,17 @@ a:hover {
 .post-layout .post-content h2,
 .post-layout .post-content h3,
 .post-layout .post-content h4 {
-  color: var(--clr-heading-dark);
+  color: var(--color-gray-lightest);
   margin-top: 2em;
   margin-bottom: 0.8em;
+}
+
+.post-layout .post-content hr {
+  border-color: var(--color-gray-darker);
+  border-width: 1px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  opacity: 0.5;
 }
 
 .post-layout .post-content p,
@@ -965,7 +994,7 @@ a:hover {
 
 .download-label {
   font-size: 0.8em;
-  color: var(--clr-meta-dark);
+  color: var(--gray-light);
   margin: 0 0.5em 0 0; /* Default right margin */
   display: inline-block; /* Align with buttons */
   line-height: 1.5; /* Align with button text */
