@@ -135,11 +135,20 @@ body {
   transition: background-color 0.2s;
   color: var(--clr-heading);
   background-color: var(--color-green-darker);
-  border: 1px solid var(--color-green-darkest)
+  border: 1px solid var(--color-green-darkest);
+  width: 100px;
 }
 
 .hero-downloads .btn-download:hover {
   background-color: var(--clr-accent-dark);
+}
+
+.hero-downloads .btn-download.disabled {
+  background-color: var(--clr-bg-subtle);
+  color: var(--clr-text-dim);
+  border-color: var(--clr-border);
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .hero-downloads .btn-label-inline {
@@ -660,6 +669,12 @@ a:hover {
 
 .btn-label-inline {
   /* Styles for inline label if needed */
+}
+
+.btn-sub-inline {
+  font-size: 0.8em;
+  color: var(--clr-gray-light);
+  font-style: italic;
 }
 
 .post-layout h1 {
