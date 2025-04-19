@@ -1,8 +1,9 @@
 {
   "latest": {
     "version": "0.4.3",
-    "date": "2025-04-17",
-    "notes": "Added budget rollover support and improved UI for end-of-period closeout.",
-    "url": "https://astreos.app/downloads/astreos-0.4.3.AppImage"
+    "date": "N/A",
+    "notes": "Developer release",
+    "url": null,
+    "releaseNotes": "https://astreos.app"
   }
-} 
+}

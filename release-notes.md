@@ -19,7 +19,7 @@ permalink: /releases/
         <div class="post-details">
           <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
           <div class="post-excerpt">
-            {{ post.excerpt }}
+            {{ post.notes }}
           </div>
         </div>
         <div class="post-download-column">
