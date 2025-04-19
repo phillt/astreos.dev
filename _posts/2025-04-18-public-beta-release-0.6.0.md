@@ -4,12 +4,11 @@ title: "Public Beta Release 0.6.0"
 date: 2025-04-18
 version: "0.6.0"
 notes: "This release is the first stable beta version available to the public."
-download_url: "https://astreos.app/downloads/astreos-0.6.0-dummy.AppImage"
 # Add other OS-specific downloads if needed, matching release-notes.md keys:
-# download_windows: "..."
+download_windows: "https://github.com/phillt/astreos.dev/releases/download/v0.6.0/Astreos-Windows-0.6.0-Setup.exe"
 # download_macos: "..."
-# download_linux: "https://astreos.app/downloads/astreos-0.6.0-dummy.AppImage"
-published: false
+download_linux: "https://github.com/phillt/astreos.dev/releases/download/v0.6.0/Astreos-Linux-0.6.0.deb"
+published: true
 ---
 # 🚀 Astreos v0.6.0 – Public Beta Release
 

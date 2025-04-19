@@ -110,6 +110,42 @@ body {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
 }
 
+.hero-downloads {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-downloads .download-label {
+  font-weight: 500;
+  margin-right: 0.5rem;
+  color: var(--clr-heading);
+}
+
+.hero-downloads .btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  color: var(--clr-heading);
+  background-color: var(--color-green-darker);
+  border: 1px solid var(--color-green-darkest)
+}
+
+.hero-downloads .btn-download:hover {
+  background-color: var(--clr-accent-dark);
+}
+
+.hero-downloads .btn-label-inline {
+  margin-left: 0.5rem;
+}
+
 h1, h2, h3 {
   color: var(--clr-heading);
 }
@@ -786,8 +822,16 @@ a:hover {
 
   /* --- Hero Section --- */
   .hero {
-    padding: 1rem; /* Reduced padding */
-    min-height: calc(100vh - 60px); /* Adjust for potentially smaller navbar */
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .hero-downloads {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-image {
+    max-width: 100%;
   }
   .hero h1 {
     font-size: 2.5em; /* Smaller main heading */
@@ -795,10 +839,6 @@ a:hover {
   }
   .hero p {
     font-size: 1em;
-  }
-  .hero-image {
-    max-width: 90%; /* Ensure it fits */
-    max-height: 45vh; /* Adjust height limit */
   }
 
   /* --- Feature Sections --- */
