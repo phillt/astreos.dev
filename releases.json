@@ -18,8 +18,14 @@
   }
 }
 {%- else -%}
-{%- comment -%} Output empty or default JSON if no posts exist {%- endcomment -%}
+{%- comment -%} Output default JSON if no posts exist {%- endcomment -%}
 {
-  "latest": null
+  "latest": {
+    "version": "0.4.3",
+    "date": "N/A",
+    "notes": "Developer release",
+    "url": null,
+    "releaseNotes": "https://astreos.app"
+  }
 }
 {%- endif -%} 
