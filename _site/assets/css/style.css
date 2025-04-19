@@ -447,7 +447,7 @@ a:hover {
 
 /* Release Notes Page Styles */
 .release-notes-page {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 4rem auto;
   padding: 2rem 2rem; /* Adjust padding */
   min-height: calc(100vh - 270px); /* Adjust for navbar, extend close to bottom */
@@ -587,7 +587,7 @@ a:hover {
 
 /* Single Post Layout Styles */
 .post-layout {
-  max-width: 800px; /* Match list page width */
+  max-width: 1000px; /* Match list page width */
   margin: 1rem auto; /* Match list page margin */
   padding: 2.5rem 3rem; /* Match list page padding */
   min-height: calc(100vh - 270px); /* Match list page height */
@@ -704,7 +704,7 @@ a:hover {
 
 /* Breadcrumbs Styles */
 .breadcrumbs-container {
-  max-width: 800px; /* Match post content width */
+  max-width: 1000px; /* Match post content width */
   margin: 2rem auto 0 auto; /* Margin above, centered */
   padding: 0 1rem; /* Match post padding horizontally */
 }
