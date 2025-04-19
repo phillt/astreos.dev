@@ -3,5 +3,13 @@ url: "https://astreos.app"
 BASE_URL: "https://astreos.app"
 baseurl: ""
 
+collections:
+  articles:
+    output: true
+    permalink: /articles/:path/
+  releases:
+    output: true
+    permalink: /releases/:path/
+
 include:
   - releases.json
