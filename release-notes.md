@@ -3,8 +3,8 @@ layout: default
 title: Releases
 permalink: /releases/
 ---
-
-<div class="release-notes-page">
+<div class="post-layout-container">
+<div class="post-layout">
   <h1>{{ page.title }}</h1>
 
   <ul class="release-notes-list">
@@ -17,7 +17,9 @@ permalink: /releases/
           <p class="post-meta">{{ post.date | date_to_string }}</p>
         </div>
         <div class="post-details">
-          <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+          <h2><a href="{{ post.url | relative_url }}">{{ post.title | escape }}
+           <i class="fas fa-chevron-right fa-sm"></i>
+           </a></h2>
           <div class="post-excerpt">
             {{ post.notes }}
           </div>
@@ -46,4 +48,5 @@ permalink: /releases/
       </li>
     {% endfor %}
   </ul>
+</div> 
 </div> 

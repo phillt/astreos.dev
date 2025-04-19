@@ -509,9 +509,9 @@ a:hover {
 
 .release-notes-list {
   list-style: none;
-  margin-top: 0;
-  border-bottom: 1px solid var(--clr-text-subtle);
-  border-top: 1px solid var(--clr-text-subtle);
+  margin-top: 10px;
+  border-bottom: 1px solid var(--color-gray-darkest);
+  border-top: 1px solid var(--color-gray-darkest);
    /* Subtle top border for the list */
 }
 
@@ -524,7 +524,7 @@ a:hover {
   align-items: stretch;
   gap: 0; /* Remove gap, handled by padding & border */
   margin-bottom: 0;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--color-gray-darker);
 }
 
 .release-notes-list .post-meta-column,
@@ -533,19 +533,19 @@ a:hover {
   padding: 1.5rem 1rem; /* Uniform padding */
   display: flex; /* Enable flex for alignment */
   flex-direction: column; /* Default direction */
-  justify-content: center; /* Center content vertically */
+  justify-content: start; /* Center content vertically */
 }
 
 .release-notes-list .post-meta-column {
   flex: 0 0 120px;
   text-align: right;
-  border-right: 1px dashed var(--clr-meta-dark);
+  border-right: 1px dashed var(--color-gray-darkest);
   align-items: flex-end; /* Align text to the right */
 }
 
 .release-notes-list .post-version {
   font-weight: normal;
-  color: var(--clr-heading-dark); /* Match heading color */
+  color: var(--color-gray-lightest); /* Match heading color */
   margin: 0 0 0.25rem 0; /* Margin below version */
   font-size: 0.95em;
 }
@@ -559,7 +559,7 @@ a:hover {
 
 .release-notes-list .post-details {
   flex: 1;
-  border-right: 1px dashed var(--clr-meta-dark);
+  border-right: 1px dashed var(--color-gray-darkest);
   justify-content: flex-start; /* Align text to top */
 }
 
@@ -572,7 +572,7 @@ a:hover {
 
 .release-notes-list h2 a {
   text-decoration: none;
-  color: var(--clr-heading-dark); /* Dark heading color */
+  color: var(--color-gray-lightest); /* Dark heading color */
 }
 
 .release-notes-list h2 a:hover {
@@ -1015,10 +1015,30 @@ a:hover {
   padding-top: 1rem; /* Adjust padding to align label nicely */
 }
 
-.release-notes-list .post-download-column .download-label {
+.release-notes-list .post-download-column .btn-download .btn-label {
   text-align: center; /* Center label above buttons */
   margin-bottom: 0.4rem; /* Space below label */
   width: 100%; /* Take full width */
+  color: var(--color-gray-lightest);
+}
+.release-notes-list .post-download-column .btn-download i {
+  color: var(--color-gray-light);
+}
+
+.release-notes-list .post-download-column .btn-download:hover {
+  color: var(--color-gray-darkest);
+  border-color: var(--color-gray-lightest);
+  background-color: var(--color-gray-light);
+}
+
+.release-notes-list .post-download-column .btn-download:hover .btn-label {
+  text-align: center; /* Center label above buttons */
+  margin-bottom: 0.4rem; /* Space below label */
+  width: 100%; /* Take full width */
+  color: var(--color-gray-darkest);
+}
+.release-notes-list .post-download-column .btn-download:hover i {
+  color: var(--color-gray-darker);
 }
 
 /* Mobile styles */
