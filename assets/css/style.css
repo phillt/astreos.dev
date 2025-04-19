@@ -1,26 +1,48 @@
 :root {
-  --clr-bg: #111827;
-  --clr-text: #e0e0e0;
-  --clr-text-subtle: #c0c0c0;
-  --clr-text-dim: #a0a0a0;
-  --clr-heading: #ffffff;
-  --clr-accent: #0FB900;
-  --clr-accent-light: #12E000;
-  --clr-accent-dark: #0D9F00;
-  --clr-accent-rgb: 15, 185, 0; /* RGB for accent */
-  --clr-border: #333333;
-  --clr-pill-bg: #000000;
-  --clr-pill-text: var(--clr-heading); /* Reuse heading color */
-  --clr-button-text: var(--clr-heading); /* Reuse heading color */
-  --clr-bg-subtle: #27272a; /* Subtle background gray */
+  /* Base Colors */
+  --color-gray-lightest: #e0e0e0; /* Existing --clr-text */
+  --color-gray-lighter: #c0c0c0; /* Existing --clr-text-subtle */
+  --color-gray-light: #6b7280; /* Existing --clr-meta-dark */
+  --color-gray-medium: #a0a0a0; /* Existing --clr-text-dim */
+  --color-gray: #333333; /* Existing --clr-border */
+  --color-gray-dark: #1f2937; /* Existing --clr-text-dark */
+  --color-gray-darker: #27272a; /* Existing --clr-bg-subtle */
+  --color-gray-darkest: #111827; /* Existing --clr-bg / --clr-heading-dark */
+
+  --color-green-lightest: #33FF22;
+  --color-green-light: #12E000; /* Existing --clr-accent-light */
+  --color-green: #0FB900; /* Existing --clr-accent */
+  --color-green-dark: #0D9F00; /* Existing --clr-accent-dark */
+  --color-green-darker: #057a00; /* Existing --clr-accent-darker */
+  --color-green-darkest: #034d00;
+  
+  --color-white: #ffffff; /* Existing --clr-heading */
+  --color-white-off: #fbfbf8; /* Existing --clr-bg-paper */
+  --color-black: #000000; /* Existing --clr-pill-bg */
+
+  /* Theme Colors */
+  --clr-bg: var(--color-gray-darkest);
+  --clr-text: var(--color-gray-lightest);
+  --clr-text-subtle: var(--color-gray-lighter);
+  --clr-text-dim: var(--color-gray-medium);
+  --clr-heading: var(--color-white);
+  --clr-accent: var(--color-green);
+  --clr-accent-light: var(--color-green-light);
+  --clr-accent-dark: var(--color-green-dark);
+  --clr-accent-rgb: 15, 185, 0; /* Corresponds to --color-green */
+  --clr-border: var(--color-gray);
+  --clr-pill-bg: var(--color-black);
+  --clr-pill-text: var(--clr-heading); /* Already using variable */
+  --clr-button-text: var(--clr-heading); /* Already using variable */
+  --clr-bg-subtle: var(--color-gray-darker);
 
   /* Light Theme Specific */
-  --clr-bg-light: #ffffff;
-  --clr-bg-paper: #fbfbf8; /* Subtle off-white paper color */
-  --clr-text-dark: #1f2937; /* Dark Gray for text */
-  --clr-heading-dark: #111827; /* Very Dark Gray/Black for headings */
-  --clr-meta-dark: #6b7280; /* Medium Gray for meta */
-  --clr-accent-darker: #057a00; /* Darker Green for hover on light bg */
+  --clr-bg-light: var(--color-white);
+  --clr-bg-paper: var(--color-white-off);
+  --clr-text-dark: var(--color-gray-dark);
+  --clr-heading-dark: var(--color-gray-darkest);
+  --clr-meta-dark: var(--color-gray-light);
+  --clr-accent-darker: var(--color-green-darker);
 }
 
 @font-face {
@@ -512,9 +534,13 @@ a:hover {
   color: var(--clr-accent-darker); /* Use darker accent for hover */
 }
 
+.post-excerpt {
+  color: var(--color-gray-light);
+}
+
 .post-excerpt p {
   margin: 0;
-  color: var(--clr-text-dark);
+  color: var(--clr-text-dim);
   line-height: 1.6;
   font-size: 0.95em; /* Slightly smaller excerpt */
 }

@@ -1,8 +1,25 @@
+---
+---
+{%- comment -%}Assign the latest post to a variable for easier access{%- endcomment -%}
+{%- assign latest_post = site.posts.first -%}
+
+{%- comment -%}Check if there are any posts to avoid errors{%- endcomment -%}
+{%- if latest_post -%}
 {
   "latest": {
-    "version": "0.4.3",
-    "date": "2025-04-17",
-    "notes": "Added budget rollover support and improved UI for end-of-period closeout.",
-    "url": "https://astreos.app/downloads/astreos-0.4.3.AppImage"
+    "version": {{ latest_post.version | default: "N/A" | jsonify }},
+    "date": {{ latest_post.date | date: "%Y-%m-%d" | jsonify }},
+    {%- comment -%} Use 'notes' from front matter, or fallback to excerpt/content if needed {%- endcomment -%}
+    "notes": {{ latest_post.notes | default: latest_post.excerpt | strip_html | strip_newlines | jsonify }},
+    {%- comment -%} Assuming a 'download_url' field in post front matter {%- endcomment -%}
+    "url": {{ latest_post.download_url | jsonify }},
+    {%- comment -%} Use the post's actual generated URL for release notes {%- endcomment -%}
+    "releaseNotes": {{ latest_post.url | absolute_url | jsonify }}
   }
-} 
+}
+{%- else -%}
+{%- comment -%} Output empty or default JSON if no posts exist {%- endcomment -%}
+{
+  "latest": null
+}
+{%- endif -%} 
