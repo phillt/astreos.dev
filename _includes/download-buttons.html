@@ -1,10 +1,4 @@
-{% if include.latest_post %}
-  {% assign latest_post = include.latest_post %}
-{% elsif include.use_release_post %}
-  {% assign latest_post = site.posts | where: "type", "release" | first %}
-{% else %}
-  {% assign latest_post = site.posts.first %}
-{% endif %}
+{% assign latest_post = site.posts | where: "type", "release" | first %}
 
 <div class="hero-downloads">
   {% if latest_post.download_windows %}
