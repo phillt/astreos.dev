@@ -21,30 +21,35 @@ layout: default
   </ol>
 </nav>
 
-<div class="post-layout-container">
-<article class="post-layout">
-  <div class="post-header">
-    <h1>{{ page.title }}</h1>
-  </div>
+<div class="article-container">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+      <div class="post-meta-line">
+        {% if page.author %}
+        <p class="post-meta">By {{ page.author }}</p>
+        {% endif %}
+        <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %d, %Y" }}</time></p>
+      </div>
+    </header>
 
-  <div class="post-subheading">
-    <span class="post-meta">{{ page.date | date_to_string }}</span>
-  </div>
+    {% if page.cover_image %}
+    <div class="post-cover-image">
+      <img src="{{ page.cover_image }}" alt="{{ page.title }}" />
+    </div>
+    {% endif %}
 
-  {% if page.cover_image %}
-  <div class="post-cover-image">
-    <img src="{{ page.cover_image }}" alt="{{ page.title }}" />
-  </div>
-  {% endif %}
+    <div class="post-content e-content" itemprop="articleBody">
+      {{ content }}
+    </div>
 
-  <div class="post-content">
-    {{ content }}
-  </div>
+    <footer class="post-footer">
+      <div class="post-cta">
+        <h3>Ready to take control of your budget?</h3>
+        <p>Download Astreos today and start budgeting on your terms - no syncing, no subscriptions, just simple and effective budgeting.</p>
+        {% include download-buttons.html use_release_post=true %}
+      </div>
+    </footer>
 
-  <div class="post-cta">
-    <h3>Ready to take control of your budget?</h3>
-    <p>Download Astreos today and start budgeting on your terms - no syncing, no subscriptions, just simple and effective budgeting.</p>
-    {% include download-buttons.html use_release_post=true %}
-  </div>
-</article>
+  </article>
 </div> 
