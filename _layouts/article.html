@@ -39,17 +39,35 @@ layout: default
     </div>
     {% endif %}
 
-    <div class="post-content e-content" itemprop="articleBody">
-      {{ content }}
-    </div>
-
-    <footer class="post-footer">
-      <div class="post-cta">
-        <h3>Ready to take control of your budget?</h3>
-        <p>Download Astreos today and start budgeting on your terms - no syncing, no subscriptions, just simple and effective budgeting.</p>
-        {% include download-buttons.html use_release_post=true %}
+    <div class="post-body-wrapper">
+      <div class="post-content e-content" itemprop="articleBody">
+        {{ content }}
       </div>
-    </footer>
+
+      <aside class="post-sidebar">
+        <div class="post-cta">
+          <h3>Ready to take control of your budget?</h3>
+          <p>Download Astreos today and start budgeting on your terms - no syncing, no subscriptions, just simple and effective budgeting.</p>
+          {% include download-buttons.html use_release_post=true %}
+        </div>
+
+        <div class="suggested-articles">
+          <h4>Recent Articles</h4>
+          <ul>
+            {% assign max_related = 3 %}
+            {% assign current_url = page.url %}
+            {% assign count = 0 %}
+            {% assign limit_plus_one = max_related | plus: 1 %}
+            {% for post in site.posts limit: limit_plus_one %}
+              {% if post.url != current_url and count < max_related %}
+                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                {% assign count = count | plus: 1 %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </aside>
+    </div>
 
   </article>
 </div> 

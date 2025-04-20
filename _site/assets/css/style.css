@@ -1193,14 +1193,15 @@ a:hover {
 .post-cover-image {
   margin: 2rem 0;
   width: 100%;
+}
 
-  img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+.post-cover-image img {
+  display: block; /* Ensure image is block level */
+  width: 100%;    /* Make image fill container width */
+  height: auto;   /* Maintain aspect ratio */
+  /* Removed max-height and object-fit */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Post Call to Action Styles */
@@ -1251,7 +1252,7 @@ a:hover {
    ============================================================================ */
 
 .article-container {
-  max-width: 960px; /* Further increased max-width */
+  max-width: 1100px; /* Widened again */
   margin: 40px auto; /* Center the container and add vertical spacing */
   padding: 0 20px; /* Add horizontal padding for smaller screens */
   /* Styles below apply to the light theme context */
@@ -1458,5 +1459,69 @@ a:hover {
 
   .post .post-content {
     font-size: 1rem;
+  }
+}
+
+/* Sidebar and Two-Column Layout */
+.post-body-wrapper {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to single column */
+  gap: 40px; /* Gap between content and sidebar */
+  margin-top: 30px; /* Space below cover image or header */
+}
+
+@media (min-width: 992px) { /* Apply two-column layout on larger screens */
+  .post-body-wrapper {
+    grid-template-columns: 2fr 1fr; /* Adjust ratio as needed (e.g., 3fr 1fr) */
+  }
+}
+
+.post-sidebar {
+  padding-top: 20px; /* Align top slightly below main content start */
+  /* Optional: Add background or border */
+  /* background-color: var(--clr-bg-light); */
+  /* border-left: 1px solid var(--color-gray-lightest); */
+  /* padding-left: 30px; */
+}
+
+.post-sidebar .post-cta {
+  margin-bottom: 40px; /* Space between CTA and suggested articles */
+}
+
+.suggested-articles h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--clr-heading-dark);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-gray-lightest);
+}
+
+.suggested-articles ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggested-articles li {
+  margin-bottom: 10px;
+}
+
+.suggested-articles a {
+  text-decoration: none;
+  color: var(--clr-accent);
+  font-size: 0.95em;
+}
+
+.suggested-articles a:hover {
+  color: var(--clr-accent-darker);
+  text-decoration: underline;
+}
+
+
+/* Adjustments for articles page on mobile */
+@media (max-width: 768px) {
+  .post-body-wrapper {
+    grid-template-columns: 1fr; /* Default to single column on mobile */
   }
 }
