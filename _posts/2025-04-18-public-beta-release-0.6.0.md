@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Public Beta Release 0.6.0"
+title: "🚀 Public Beta Release"
 date: 2025-04-18
 version: "0.6.0"
 notes: "This release is the first stable beta version available to the public."
@@ -12,8 +12,6 @@ download_linux: "https://github.com/phillt/astreos.dev/releases/download/v0.6.0/
 published: true
 author: Jack
 ---
-# 🚀 Astreos v0.6.0 – Public Beta Release
-
 Welcome to the first public beta of **Astreos** – a modern, privacy-first budgeting app designed to help you take control of your finances without the stress or bloat of traditional finance tools.
 
 This release introduces our core budgeting workflow and a fresh desktop experience tailored for people who want to **budget with intention, not just track transactions**.
