@@ -59,9 +59,12 @@ layout: default
             {% assign count = 0 %}
             {% assign limit_plus_one = max_related | plus: 1 %}
             {% for post in site.posts limit: limit_plus_one %}
-              {% if post.url != current_url and count < max_related %}
-                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-                {% assign count = count | plus: 1 %}
+              {% comment %} Skip current post and only include posts with type: article {% endcomment %}
+              {% if post.type == 'article' %}
+                {% if post.url != current_url and count < max_related %}
+                  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                  {% assign count = count | plus: 1 %}
+                {% endif %}
               {% endif %}
             {% endfor %}
           </ul>

@@ -1252,7 +1252,7 @@ a:hover {
    ============================================================================ */
 
 .article-container {
-  max-width: 1100px; /* Widened again */
+  max-width: 1280px; /* Widened again */
   margin: 40px auto; /* Center the container and add vertical spacing */
   padding: 0 20px; /* Add horizontal padding for smaller screens */
   /* Styles below apply to the light theme context */
@@ -1477,7 +1477,10 @@ a:hover {
 }
 
 .post-sidebar {
-  padding-top: 20px; /* Align top slightly below main content start */
+  padding-top: 0px; /* Remove top padding to reduce space above CTA */
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Control spacing between sidebar items */
   /* Optional: Add background or border */
   /* background-color: var(--clr-bg-light); */
   /* border-left: 1px solid var(--color-gray-lightest); */
@@ -1485,7 +1488,46 @@ a:hover {
 }
 
 .post-sidebar .post-cta {
-  margin-bottom: 40px; /* Space between CTA and suggested articles */
+  /* margin-bottom: 40px; */ /* Remove margin, use parent gap instead */
+  margin-top: 0; /* Override default top margin */
+  background-color: var(--clr-bg-light); /* Explicitly set light background if not inherited */
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+  border-top: none; /* Remove inherited top border */
+}
+
+.post-sidebar .post-cta h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  color: var(--clr-heading-dark); /* Use dark heading color */
+}
+
+.post-sidebar .post-cta p {
+  margin-bottom: 25px;
+  color: var(--clr-text-dark); /* Use dark text color */
+}
+
+/* Update styles for download elements within the sidebar CTA */
+.post-sidebar .post-cta .hero-downloads {
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.post-sidebar .post-cta .hero-downloads .download-label {
+  color: var(--clr-text-dark); /* Use dark text color */
+}
+
+.post-sidebar .post-cta .hero-downloads .btn-download {
+  color: var(--clr-heading); /* Keep light text for contrast on green button */
+  background-color: var(--clr-accent);
+  border: 1px solid var(--clr-accent-dark);
+}
+
+.post-sidebar .post-cta .hero-downloads .btn-download:hover {
+  background-color: var(--clr-accent-dark);
+  color: var(--clr-heading); /* Keep light text on hover */
 }
 
 .suggested-articles h4 {
