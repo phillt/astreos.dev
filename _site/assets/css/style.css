@@ -623,19 +623,19 @@ a:hover {
 
 
 .post-layout-container {
-  width: 100%; /* Match list page width */
-  margin: 1rem auto; /* Match list page margin */
-  padding: 2.5rem 3rem; /* Match list page padding */
-  min-height: calc(100vh - 270px); /* Match list page height */
-  background-color: var(--color-gray-dark); /* Use paper background */
+  width: 100%;
+  margin: 1rem auto 0 auto;
+  padding: 2.5rem 3rem;
+  min-height: calc(100vh - 270px);
+  background-color: var(--color-gray-dark);
+  box-sizing: border-box;
 }
-/* Single Post Layout Styles */
+
 .post-layout {
-  max-width: 1000px; /* Match list page width */
-  margin: 1rem auto; /* Match list page margin */
-  padding: 2.5rem 3rem; /* Match list page padding */
-  min-height: calc(100vh - 270px); /* Match list page height */
-  color: var(--color-gray-lightest); /* Set base dark text color */
+  margin: 0;
+  padding: 2.5rem 0;
+  color: var(--color-gray-lightest);
+  box-sizing: border-box;
 }
 
 .post-header {
@@ -1678,5 +1678,50 @@ a:hover {
 
   .article-content {
     padding: 1rem;
+  }
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: var(--color-black);
+  color: var(--clr-text-dim);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Center brand elements */
+  margin-bottom: 1rem; /* Space below brand */
+}
+
+.footer-logo {
+  height: 30px; /* Smaller logo for footer */
+  margin-right: 0.5rem; /* Space between logo and text */
+}
+
+.footer-brand-text {
+  font-size: 1.1em; /* Appropriate size for footer */
+  font-weight: 500;
+  color: var(--clr-heading); /* White text for brand name */
+}
+
+.footer-copyright {
+  font-size: 0.85em;
+  margin-top: 1rem; /* Space above copyright */
+}
+
+/* Responsive adjustments for footer if needed */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+  .footer-brand-text {
+    font-size: 1em;
+  }
+  .footer-logo {
+    height: 25px;
   }
 }
