@@ -1,7 +1,8 @@
 ---
 ---
 {%- comment -%}Assign the latest post to a variable for easier access{%- endcomment -%}
-{%- assign latest_post = (site.posts | where: "type", "release").first -%}
+{%- assign release_posts = site.posts | where_exp: "item", "item.type == 'release'" -%}
+{%- assign latest_post = release_posts | sort: 'date' | last -%}
 
 {%- comment -%}Check if there are any posts to avoid errors{%- endcomment -%}
 {%- if latest_post -%}

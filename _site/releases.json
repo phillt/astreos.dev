@@ -1,6 +1,6 @@
 {
   "latest": {
-    "version": "N/A",
-    "date": "2025-04-19","notes": "Struggling to stick with a budget? Here are 5 simple, effective ways to build a lasting budgeting habit using Astreos—starting with your next paycheck.","url": null,"releaseNotes": "http://localhost:4000/budgeting/habits/getting-started/2025/04/19/start-budgeting-habit.html"
+    "version": "0.6.1",
+    "date": "2025-04-19","notes": "Patches an issue where Astreos would load with a blank page.","url": null,"releaseNotes": "http://localhost:4000/2025/04/19/astreos-v0.6.1.html"
   }
 }
