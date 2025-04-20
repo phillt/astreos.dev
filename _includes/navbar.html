@@ -1,20 +1,16 @@
 <nav class="navbar">
   <div class="navbar-left">
-    <a href="{{ '/' | relative_url }}" class="navbar-brand-link">
-      <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="Logo" class="navbar-logo">
+    <a href="/" class="navbar-brand-link">
+      <img src="/assets/images/logo.svg" alt="Logo" class="navbar-logo">
       <span class="navbar-brand-text">Astreos</span>
       <span class="beta-pill">beta</span>
     </a>
   </div>
   <div class="navbar-middle">
     <ul>
-      <li><a href="#features">Features</a></li>
-      {% if site.posts.size > 0 %}
-      <li><a href="{{ '/releases/' | relative_url }}">Releases</a></li>
-      {% endif %}
+      <li><a href="{% if page.url == '/' %}#features{% else %}/#features{% endif %}">Features</a></li>
+      <li><a href="/releases/">Releases</a></li>
+      <li><a href="/articles/">Articles</a></li>
     </ul>
-  </div>
-  <div class="navbar-right">
-    <button class="btn btn-register" disabled>Coming Soon</button>
   </div>
 </nav> 

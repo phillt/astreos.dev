@@ -15,7 +15,7 @@
   --color-green-dark: #0D9F00; /* Existing --clr-accent-dark */
   --color-green-darker: #057a00; /* Existing --clr-accent-darker */
   --color-green-darkest: #034d00;
-  
+
   --color-white: #ffffff; /* Existing --clr-heading */
   --color-white-off: #fbfbf8; /* Existing --clr-bg-paper */
   --color-black: #000000; /* Existing --clr-pill-bg */
@@ -108,6 +108,51 @@ body {
   height: auto; /* Maintain aspect ratio */
   border-radius: 8px; /* Optional: rounded corners */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+}
+
+.hero-downloads {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-downloads .download-label {
+  font-weight: 500;
+  margin-right: 0.5rem;
+  color: var(--clr-heading);
+}
+
+.hero-downloads .btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  color: var(--clr-heading);
+  background-color: var(--color-green-darker);
+  border: 1px solid var(--color-green-darkest);
+  width: 100px;
+}
+
+.hero-downloads .btn-download:hover {
+  background-color: var(--clr-accent-dark);
+}
+
+.hero-downloads .btn-download.disabled {
+  background-color: var(--clr-bg-subtle);
+  color: var(--clr-text-dim);
+  border-color: var(--clr-border);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.hero-downloads .btn-label-inline {
+  margin-left: 0.5rem;
 }
 
 h1, h2, h3 {
@@ -464,9 +509,9 @@ a:hover {
 
 .release-notes-list {
   list-style: none;
-  margin-top: 0;
-  border-bottom: 1px solid var(--clr-text-subtle);
-  border-top: 1px solid var(--clr-text-subtle);
+  margin-top: 10px;
+  border-bottom: 1px solid var(--color-gray-darkest);
+  border-top: 1px solid var(--color-gray-darkest);
    /* Subtle top border for the list */
 }
 
@@ -479,7 +524,7 @@ a:hover {
   align-items: stretch;
   gap: 0; /* Remove gap, handled by padding & border */
   margin-bottom: 0;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--color-gray-darker);
 }
 
 .release-notes-list .post-meta-column,
@@ -488,19 +533,19 @@ a:hover {
   padding: 1.5rem 1rem; /* Uniform padding */
   display: flex; /* Enable flex for alignment */
   flex-direction: column; /* Default direction */
-  justify-content: center; /* Center content vertically */
+  justify-content: start; /* Center content vertically */
 }
 
 .release-notes-list .post-meta-column {
   flex: 0 0 120px;
   text-align: right;
-  border-right: 1px dashed var(--clr-meta-dark);
+  border-right: 1px dashed var(--color-gray-darkest);
   align-items: flex-end; /* Align text to the right */
 }
 
 .release-notes-list .post-version {
   font-weight: normal;
-  color: var(--clr-heading-dark); /* Match heading color */
+  color: var(--color-gray-lightest); /* Match heading color */
   margin: 0 0 0.25rem 0; /* Margin below version */
   font-size: 0.95em;
 }
@@ -514,7 +559,7 @@ a:hover {
 
 .release-notes-list .post-details {
   flex: 1;
-  border-right: 1px dashed var(--clr-meta-dark);
+  border-right: 1px dashed var(--color-gray-darkest);
   justify-content: flex-start; /* Align text to top */
 }
 
@@ -527,7 +572,7 @@ a:hover {
 
 .release-notes-list h2 a {
   text-decoration: none;
-  color: var(--clr-heading-dark); /* Dark heading color */
+  color: var(--color-gray-lightest); /* Dark heading color */
 }
 
 .release-notes-list h2 a:hover {
@@ -575,33 +620,29 @@ a:hover {
   text-align: center;
 }
 
-.btn-download .btn-label {
-  /* Styles for the label if needed */
+
+
+.post-layout-container {
+  width: 100%;
+  margin: 1rem auto 0 auto;
+  padding: 2.5rem 3rem;
+  min-height: calc(100vh - 270px);
+  background-color: var(--color-gray-dark);
+  box-sizing: border-box;
 }
 
-.btn-download:hover {
-  background-color: var(--clr-text-dark);
-  color: var(--clr-bg-paper);
-  border-color: var(--clr-text-dark);
-}
-
-/* Single Post Layout Styles */
 .post-layout {
-  max-width: 1000px; /* Match list page width */
-  margin: 1rem auto; /* Match list page margin */
-  padding: 2.5rem 3rem; /* Match list page padding */
-  min-height: calc(100vh - 270px); /* Match list page height */
-  background-color: var(--clr-bg-paper); /* Use paper background */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Match shadow */
-  color: var(--clr-text-dark); /* Set base dark text color */
+  margin: 0;
+  padding: 2.5rem 0;
+  color: var(--color-gray-lightest);
+  box-sizing: border-box;
 }
 
 .post-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem; /* Space below header */
+  display: block; /* Ensure elements stack vertically */
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-gray-lightest); /* Subtle separator */
   gap: 1rem;
 }
 
@@ -620,18 +661,49 @@ a:hover {
 .post-header-downloads .btn-download i {
   font-size: 1.1em;
   width: auto; /* Auto width for icon */
+    color: var(--color-gray-light);
+}
+
+.post-header-downloads .btn-download:hover i {
+  color: var(--color-gray-darker);
 }
 
 .btn-label-inline {
   /* Styles for inline label if needed */
+  color: var(--color-gray-lightest);
+}
+
+.post-header-downloads .download-label {
+  color: var(--color-gray-light);
+}
+
+ .post-header-downloads .btn-download:hover {
+  color: var(--color-gray-darkest);
+  border-color: var(--color-gray-lightest);
+  background-color: var(--color-gray-light);
+}
+
+.post-header-downloads .btn-download:hover .btn-label-inline {
+  /* Styles for inline label if needed */
+  color: var(--color-gray-darkest);
+}
+
+.btn-sub-inline {
+  font-size: 0.8em;
+  color: var(--clr-gray-light);
+  font-style: italic;
 }
 
 .post-layout h1 {
   margin-top: 0;
   margin-bottom: 0; /* Removed margin */
-  color: var(--clr-heading-dark);
+  color: var(--color-gray-lightest);
   font-size: 2em; /* Adjust size */
   line-height: 1.2;
+}
+
+.post-layout .post-content h2 {
+  color: var(--color-gray-lightest);
 }
 
 .post-subheading {
@@ -661,9 +733,17 @@ a:hover {
 .post-layout .post-content h2,
 .post-layout .post-content h3,
 .post-layout .post-content h4 {
-  color: var(--clr-heading-dark);
+  color: var(--color-gray-lightest);
   margin-top: 2em;
   margin-bottom: 0.8em;
+}
+
+.post-layout .post-content hr {
+  border-color: var(--color-gray-darker);
+  border-width: 1px;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  opacity: 0.5;
 }
 
 .post-layout .post-content p,
@@ -786,8 +866,16 @@ a:hover {
 
   /* --- Hero Section --- */
   .hero {
-    padding: 1rem; /* Reduced padding */
-    min-height: calc(100vh - 60px); /* Adjust for potentially smaller navbar */
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .hero-downloads {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero-image {
+    max-width: 100%;
   }
   .hero h1 {
     font-size: 2.5em; /* Smaller main heading */
@@ -795,10 +883,6 @@ a:hover {
   }
   .hero p {
     font-size: 1em;
-  }
-  .hero-image {
-    max-width: 90%; /* Ensure it fits */
-    max-height: 45vh; /* Adjust height limit */
   }
 
   /* --- Feature Sections --- */
@@ -910,7 +994,7 @@ a:hover {
 
 .download-label {
   font-size: 0.8em;
-  color: var(--clr-meta-dark);
+  color: var(--gray-light);
   margin: 0 0.5em 0 0; /* Default right margin */
   display: inline-block; /* Align with buttons */
   line-height: 1.5; /* Align with button text */
@@ -931,10 +1015,30 @@ a:hover {
   padding-top: 1rem; /* Adjust padding to align label nicely */
 }
 
-.release-notes-list .post-download-column .download-label {
+.release-notes-list .post-download-column .btn-download .btn-label {
   text-align: center; /* Center label above buttons */
   margin-bottom: 0.4rem; /* Space below label */
   width: 100%; /* Take full width */
+  color: var(--color-gray-lightest);
+}
+.release-notes-list .post-download-column .btn-download i {
+  color: var(--color-gray-light);
+}
+
+.release-notes-list .post-download-column .btn-download:hover {
+  color: var(--color-gray-darkest);
+  border-color: var(--color-gray-lightest);
+  background-color: var(--color-gray-light);
+}
+
+.release-notes-list .post-download-column .btn-download:hover .btn-label {
+  text-align: center; /* Center label above buttons */
+  margin-bottom: 0.4rem; /* Space below label */
+  width: 100%; /* Take full width */
+  color: var(--color-gray-darkest);
+}
+.release-notes-list .post-download-column .btn-download:hover i {
+  color: var(--color-gray-darker);
 }
 
 /* Mobile styles */
@@ -958,4 +1062,666 @@ a:hover {
      text-align: left;
      margin-bottom: 0; /* Remove bottom margin */
    }
+}
+
+/* Articles Page Styles */
+.articles-page {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem 2rem;
+  min-height: calc(100vh - 270px);
+  background-color: var(--clr-bg-paper);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.articles-page h1 {
+  text-align: left;
+  margin-bottom: 2rem;
+  color: var(--clr-heading-dark);
+}
+
+.articles-list {
+  list-style: none;
+  margin-top: 10px;
+  border-bottom: 1px solid var(--color-gray-darkest);
+  border-top: 1px solid var(--color-gray-darkest);
+}
+
+.articles-list li:first-of-type {
+  border-top: none;
+}
+
+.articles-list li {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  margin-bottom: 0;
+  border-top: 1px solid var(--color-gray-darker);
+}
+
+.articles-list .post-meta-column,
+.articles-list .post-details {
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.articles-list .post-meta-column {
+  flex: 0 0 120px;
+  text-align: right;
+  border-right: 1px dashed var(--color-gray-darkest);
+  align-items: flex-end;
+}
+
+.articles-list .post-meta {
+  color: var(--clr-meta-dark);
+  font-size: 0.85em;
+  margin-bottom: 0;
+}
+
+.articles-list .post-details {
+  flex: 1;
+  border-right: 1px dashed var(--color-gray-darkest);
+  justify-content: flex-start;
+}
+
+.articles-list h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3em;
+  line-height: 1.3;
+}
+
+.articles-list h2 a {
+  text-decoration: none;
+  color: var(--color-gray-lightest);
+}
+
+.articles-list h2 a:hover {
+  color: var(--clr-accent-darker);
+}
+
+.articles-list .post-excerpt {
+  color: var(--color-gray-light);
+}
+
+.articles-list .post-excerpt p {
+  margin: 0;
+  color: var(--clr-text-dim);
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+/* Adjustments for articles page on mobile */
+@media (max-width: 768px) {
+  .articles-page {
+    padding: 2rem 1.5rem;
+    margin: 2rem auto;
+  }
+  .articles-page h1 {
+    font-size: 1.8em;
+  }
+  .articles-list li {
+    flex-direction: column;
+    gap: 0;
+  }
+  .articles-list .post-meta-column,
+  .articles-list .post-details {
+    flex-basis: auto;
+    width: auto;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px dashed var(--clr-meta-dark);
+    align-items: flex-start;
+  }
+  .articles-list li:last-child .post-details {
+    border-bottom: none;
+  }
+  .articles-list .post-meta-column {
+    text-align: left;
+    padding-bottom: 0.5rem;
+    border-bottom: none;
+  }
+  .articles-list .post-details {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+  }
 } 
+
+.post-cover-image {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.post-cover-image img {
+  display: block; /* Ensure image is block level */
+  width: 100%;    /* Make image fill container width */
+  height: auto;   /* Maintain aspect ratio */
+  /* Removed max-height and object-fit */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Call to Action Styles */
+.post-cta {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-gray);
+  text-align: center;
+}
+
+.post-cta h3 {
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+  color: var(--clr-heading);
+}
+
+.post-cta p {
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--clr-text-subtle);
+}
+
+.post-cta .hero-downloads {
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Mobile adjustments for post CTA */
+@media (max-width: 768px) {
+  .post-cta {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+  }
+
+  .post-cta h3 {
+    font-size: 1.3em;
+  }
+
+  .post-cta p {
+    font-size: 0.95em;
+  }
+}
+
+/* ============================================================================
+   Article Layout Styles
+   ============================================================================ */
+
+.article-container {
+  max-width: 1280px; /* Widened again */
+  margin: 40px auto; /* Center the container and add vertical spacing */
+  padding: 0 20px; /* Add horizontal padding for smaller screens */
+  /* Styles below apply to the light theme context */
+  background-color: var(--clr-bg-paper); /* Use paper background for the container */
+  color: var(--clr-text-dark); /* Use dark text */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 40px; /* Add padding inside the container */
+}
+
+@media (min-width: 768px) {
+  .article-container {
+    margin: 60px auto;
+  }
+}
+
+/* Optional: Add a subtle border or shadow to .post if desired, adjust padding */
+/* .post {
+  border: 1px solid var(--clr-border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+} */
+
+.post .post-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-gray-lightest); /* Subtle separator */
+}
+
+.post .post-header .post-title {
+  font-size: 2.5em; /* Larger title */
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: var(--clr-heading-dark); /* Darker color for title */
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .post .post-header .post-title {
+    font-size: 3em;
+  }
+}
+
+.post .post-header .post-meta-line {
+  display: flex; /* Align items horizontally */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 0 1em; /* Add horizontal gap between items */
+  margin-top: 10px; /* Space below title */
+}
+
+.post .post-header .post-meta-line .post-meta {
+  margin-bottom: 0; /* Remove bottom margin from individual items */
+}
+
+.post .post-cover-image {
+  margin-bottom: 30px;
+}
+
+.post .post-cover-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px; /* Slightly rounded corners */
+}
+
+.post .post-content {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--clr-text-dark); /* Use dark text color from theme */
+}
+
+.post .post-content h1,
+.post .post-content h2,
+.post .post-content h3,
+.post .post-content h4,
+.post .post-content h5,
+.post .post-content h6 {
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  line-height: 1.3;
+  color: var(--clr-heading-dark); /* Use dark heading color */
+}
+
+.post .post-content h1 { font-size: 2em; }
+.post .post-content h2 { font-size: 1.75em; }
+.post .post-content h3 { font-size: 1.5em; }
+.post .post-content h4 { font-size: 1.25em; }
+
+.post .post-content p {
+  margin-bottom: 1.2em;
+}
+
+.post .post-content a {
+  color: var(--clr-accent); /* Use theme accent color for links */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.post .post-content a:hover {
+  color: var(--clr-accent-darker); /* Use darker accent for hover */
+  text-decoration: underline;
+}
+
+.post .post-content blockquote {
+  margin: 1.5em 0;
+  padding: 10px 20px;
+  border-left: 4px solid var(--clr-accent); /* Accent color border */
+  background-color: var(--clr-bg-light); /* Use light bg */
+  color: var(--clr-meta-dark); /* Slightly lighter text */
+  font-style: italic;
+}
+
+.post .post-content blockquote p {
+  margin-bottom: 0; /* Remove bottom margin for paragraphs inside blockquote */
+}
+
+.post .post-content ul,
+.post .post-content ol {
+  margin-bottom: 1.2em;
+  padding-left: 1.5em;
+}
+
+.post .post-content li {
+  margin-bottom: 0.5em;
+}
+
+.post .post-content code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.9em;
+  background-color: var(--color-gray-lightest); /* Light background for inline code */
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  color: var(--clr-text-dark);
+}
+
+.post .post-content pre {
+  background-color: var(--clr-bg-paper); /* Use paper background for code blocks */
+  border: 1px solid var(--color-gray-lighter);
+  padding: 1em;
+  border-radius: 4px;
+  overflow-x: auto; /* Handle long lines of code */
+  color: var(--clr-text-dark);
+}
+
+.post .post-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: inherit; /* Inherit color from pre */
+}
+
+.post .post-footer {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--color-gray-lightest); /* Separator before footer */
+}
+
+.post .post-footer .post-cta {
+  background-color: var(--clr-bg-light); /* Light bg for CTA */
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.post .post-footer .post-cta h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  color: var(--clr-heading-dark);
+}
+
+.post .post-footer .post-cta p {
+  margin-bottom: 25px;
+  color: var(--clr-meta-dark);
+}
+
+/* Make sure CTA downloads use the correct theme */
+.post .post-footer .post-cta .hero-downloads .btn-download {
+  color: var(--clr-button-text); /* Ensure correct button text color */
+  background-color: var(--clr-accent); /* Use accent color for button */
+  border: 1px solid var(--clr-accent-dark);
+}
+
+.post .post-footer .post-cta .hero-downloads .btn-download:hover {
+  background-color: var(--clr-accent-dark);
+}
+
+.post .post-footer .post-cta .hero-downloads .download-label {
+  color: var(--clr-text-dark);
+}
+
+/* Adjustments for articles page on mobile */
+@media (max-width: 768px) {
+  /* Add mobile specific overrides for the article styles if needed */
+  .article-container {
+    margin: 30px auto;
+    padding: 20px;
+  }
+
+  .post .post-header .post-title {
+    font-size: 2em;
+  }
+
+  .post .post-content {
+    font-size: 1rem;
+  }
+}
+
+/* Sidebar and Two-Column Layout */
+.post-body-wrapper {
+  display: grid;
+  grid-template-columns: 1fr; /* Default to single column */
+  gap: 40px; /* Gap between content and sidebar */
+  margin-top: 30px; /* Space below cover image or header */
+}
+
+@media (min-width: 992px) { /* Apply two-column layout on larger screens */
+  .post-body-wrapper {
+    grid-template-columns: 2fr 1fr; /* Adjust ratio as needed (e.g., 3fr 1fr) */
+  }
+}
+
+.post-sidebar {
+  padding-top: 0px; /* Remove top padding to reduce space above CTA */
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Control spacing between sidebar items */
+  /* Optional: Add background or border */
+  /* background-color: var(--clr-bg-light); */
+  /* border-left: 1px solid var(--color-gray-lightest); */
+  /* padding-left: 30px; */
+}
+
+.post-sidebar .post-cta {
+  /* margin-bottom: 40px; */ /* Remove margin, use parent gap instead */
+  margin-top: 0; /* Override default top margin */
+  background-color: var(--clr-bg-light); /* Explicitly set light background if not inherited */
+  padding: 30px;
+  border-radius: 5px;
+  text-align: center;
+  border-top: none; /* Remove inherited top border */
+}
+
+.post-sidebar .post-cta h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  color: var(--clr-heading-dark); /* Use dark heading color */
+}
+
+.post-sidebar .post-cta p {
+  margin-bottom: 25px;
+  color: var(--clr-text-dark); /* Use dark text color */
+}
+
+/* Update styles for download elements within the sidebar CTA */
+.post-sidebar .post-cta .hero-downloads {
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.post-sidebar .post-cta .hero-downloads .download-label {
+  color: var(--clr-text-dark); /* Use dark text color */
+}
+
+.post-sidebar .post-cta .hero-downloads .btn-download {
+  color: var(--clr-heading); /* Keep light text for contrast on green button */
+  background-color: var(--clr-accent);
+  border: 1px solid var(--clr-accent-dark);
+}
+
+.post-sidebar .post-cta .hero-downloads .btn-download:hover {
+  background-color: var(--clr-accent-dark);
+  color: var(--clr-heading); /* Keep light text on hover */
+}
+
+.suggested-articles h4 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: var(--clr-heading-dark);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-gray-lightest);
+}
+
+.suggested-articles ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.suggested-articles li {
+  margin-bottom: 10px;
+}
+
+.suggested-articles a {
+  text-decoration: none;
+  color: var(--clr-accent);
+  font-size: 0.95em;
+}
+
+.suggested-articles a:hover {
+  color: var(--clr-accent-darker);
+  text-decoration: underline;
+}
+
+
+/* Adjustments for articles page on mobile */
+@media (max-width: 768px) {
+  .post-body-wrapper {
+    grid-template-columns: 1fr; /* Default to single column on mobile */
+  }
+}
+
+/* Article Grid Styles */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 2rem; /* Space between cards */
+  margin-top: 2rem;
+}
+
+.article-card {
+  background-color: var(--clr-bg-subtle); /* Subtle background for the card */
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+  overflow: hidden; /* Ensure image corners are rounded */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.article-image-link {
+  display: block;
+  overflow: hidden;
+}
+
+.article-image {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Cover the area, cropping if needed */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-image {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.article-content {
+  padding: 1.5rem;
+  flex-grow: 1; /* Allow content to fill remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.article-content h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.article-content h2 a {
+  color: var(--clr-heading); /* Use heading color (white) for titles */
+  text-decoration: none;
+}
+
+.article-content h2 a:hover {
+  color: var(--clr-text-subtle); /* Slightly dimmer on hover */
+}
+
+.article-content .post-excerpt {
+  color: var(--clr-text-subtle);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Push read more link down */
+}
+
+.read-more {
+  color: var(--clr-text-subtle); /* Use subtle text color for read more */
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: auto; /* Stick to the bottom */
+  display: inline-flex; /* Align icon */
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.read-more:hover {
+  color: var(--clr-heading); /* Brighter white on hover */
+  text-decoration: underline;
+}
+
+.read-more i {
+  transition: transform 0.2s ease;
+}
+
+.read-more:hover i {
+  transform: translateX(4px);
+}
+
+/* Responsive adjustments for article grid */
+@media (max-width: 768px) {
+  .articles-grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    gap: 1.5rem;
+  }
+
+  .article-card {
+    /* Optional: Adjust styling for single column */
+  }
+
+  .article-image {
+    height: 180px; /* Slightly smaller image on mobile */
+  }
+
+  .article-content {
+    padding: 1rem;
+  }
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: var(--color-black);
+  color: var(--clr-text-dim);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; /* Center brand elements */
+  margin-bottom: 1rem; /* Space below brand */
+}
+
+.footer-logo {
+  height: 30px; /* Smaller logo for footer */
+  margin-right: 0.5rem; /* Space between logo and text */
+}
+
+.footer-brand-text {
+  font-size: 1.1em; /* Appropriate size for footer */
+  font-weight: 500;
+  color: var(--clr-heading); /* White text for brand name */
+}
+
+.footer-copyright {
+  font-size: 0.85em;
+  margin-top: 1rem; /* Space above copyright */
+}
+
+/* Responsive adjustments for footer if needed */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+  }
+  .footer-brand-text {
+    font-size: 1em;
+  }
+  .footer-logo {
+    height: 25px;
+  }
+}

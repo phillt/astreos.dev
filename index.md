@@ -2,11 +2,15 @@
 layout: default
 title: "Astreos (beta) - Take Control of Your Budgeting"
 ---
+{%- assign latest_post = site.posts.first -%}
 
 <div class="hero">
-  <h1>Spending is easy. Budgeting should be too.</h1>
-  <p>No subscriptions. No tracking. Just powerful budgeting built for how you actually get paid — bi-weekly, monthly, or whenever your paycheck hits.</p>
-  <img src="{{ '/assets/images/app-single.png' | relative_url }}" alt="Astreos offline budgeting app screenshot" class="hero-image">
+  <div class="hero-content">
+    <h1>Spending is easy. Budgeting should be too.</h1>
+    <p>No subscriptions. No tracking. Just powerful budgeting built for how you actually get paid — bi-weekly, monthly, or whenever your paycheck hits.</p>
+    {% include download-buttons.html latest_post=latest_post %}
+  </div>
+  <img src="{{ '/assets/images/app-feature.png' | relative_url }}" alt="Astreos offline budgeting app screenshot" class="hero-image">
 </div>
 
 <section id="features" class="content-section">

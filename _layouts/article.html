@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<nav aria-label="breadcrumb" class="breadcrumbs-container">
+  <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="{{ '/' | relative_url }}">
+        <span itemprop="name">Home</span></a>
+      <meta itemprop="position" content="1" />
+    </li>
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="{{ '/articles/' | relative_url }}">
+        <span itemprop="name">Articles</span></a>
+      <meta itemprop="position" content="2" />
+    </li>
+    <li class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <span itemprop="name">{{ page.title | escape }}</span>
+      <meta itemprop="position" content="3" />
+    </li>
+  </ol>
+</nav>
+
+<div class="article-container">
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title | escape }}</h1>
+      <div class="post-meta-line">
+        {% if page.author %}
+        <p class="post-meta">By {{ page.author }}</p>
+        {% endif %}
+        <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %d, %Y" }}</time></p>
+      </div>
+    </header>
+
+    {% if page.cover_image %}
+    <div class="post-cover-image">
+      <img src="{{ page.cover_image }}" alt="{{ page.title }}" />
+    </div>
+    {% endif %}
+
+    <div class="post-body-wrapper">
+      <div class="post-content e-content" itemprop="articleBody">
+        {{ content }}
+      </div>
+
+      <aside class="post-sidebar">
+        <div class="post-cta">
+          <h3>Ready to take control of your budget?</h3>
+          <p>Download Astreos today and start budgeting on your terms - no syncing, no subscriptions, just simple and effective budgeting.</p>
+          {% include download-buttons.html use_release_post=true %}
+        </div>
+
+        <div class="suggested-articles">
+          <h4>Recent Articles</h4>
+          <ul>
+            {% assign max_related = 3 %}
+            {% assign current_url = page.url %}
+            {% assign count = 0 %}
+            {% assign limit_plus_one = max_related | plus: 1 %}
+            {% for post in site.posts limit: limit_plus_one %}
+              {% comment %} Skip current post and only include posts with type: article {% endcomment %}
+              {% if post.type == 'article' %}
+                {% if post.url != current_url and count < max_related %}
+                  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                  {% assign count = count | plus: 1 %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+  </article>
+</div> 
