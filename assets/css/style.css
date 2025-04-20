@@ -1567,3 +1567,116 @@ a:hover {
     grid-template-columns: 1fr; /* Default to single column on mobile */
   }
 }
+
+/* Article Grid Styles */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 2rem; /* Space between cards */
+  margin-top: 2rem;
+}
+
+.article-card {
+  background-color: var(--clr-bg-subtle); /* Subtle background for the card */
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+  overflow: hidden; /* Ensure image corners are rounded */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.article-image-link {
+  display: block;
+  overflow: hidden;
+}
+
+.article-image {
+  width: 100%;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover; /* Cover the area, cropping if needed */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.article-card:hover .article-image {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.article-content {
+  padding: 1.5rem;
+  flex-grow: 1; /* Allow content to fill remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.article-content h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.article-content h2 a {
+  color: var(--clr-heading); /* Use heading color (white) for titles */
+  text-decoration: none;
+}
+
+.article-content h2 a:hover {
+  color: var(--clr-text-subtle); /* Slightly dimmer on hover */
+}
+
+.article-content .post-excerpt {
+  color: var(--clr-text-subtle);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Push read more link down */
+}
+
+.read-more {
+  color: var(--clr-text-subtle); /* Use subtle text color for read more */
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: auto; /* Stick to the bottom */
+  display: inline-flex; /* Align icon */
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.read-more:hover {
+  color: var(--clr-heading); /* Brighter white on hover */
+  text-decoration: underline;
+}
+
+.read-more i {
+  transition: transform 0.2s ease;
+}
+
+.read-more:hover i {
+  transform: translateX(4px);
+}
+
+/* Responsive adjustments for article grid */
+@media (max-width: 768px) {
+  .articles-grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+    gap: 1.5rem;
+  }
+
+  .article-card {
+    /* Optional: Adjust styling for single column */
+  }
+
+  .article-image {
+    height: 180px; /* Slightly smaller image on mobile */
+  }
+
+  .article-content {
+    padding: 1rem;
+  }
+}

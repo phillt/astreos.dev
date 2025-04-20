@@ -5,7 +5,7 @@ date: 2025-04-19
 categories: [budgeting, habits, getting-started]
 tags: [astreos, budgeting, personal-finance, pay-period, money-habits]
 excerpt: "Struggling to stick with a budget? Here are 5 simple, effective ways to build a lasting budgeting habit using Astreos—starting with your next paycheck."
-image: /assets/images/build-up-budget-habbits.png
+cover_image: /assets/images/build-up-budget-habbits.png
 slug: start-budgeting-habit
 published: true
 author: Jack
